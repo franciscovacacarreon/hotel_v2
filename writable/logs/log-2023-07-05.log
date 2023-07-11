@@ -1,0 +1,182 @@
+ERROR - 2023-07-05 03:32:26 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost', 'root', '', '', 3306, '', 0)
+#1 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\app\Controllers\Categoria.php(15): CodeIgniter\BaseModel->findAll()
+#7 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+#8 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#9 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#4 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#5 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\app\Controllers\Categoria.php(15): CodeIgniter\BaseModel->findAll()
+#6 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+#7 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+#8 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 D:\XAMP\Nueva carpeta\htdocs\hotel_v2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-05 03:32:26 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `categoria`
+WHERE `estado` = :estado:', [...], false)
+ 3 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Categoria.php(15): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 03:39:07 --> Class "CodeIgniter\Database\MySQL\Connection" not found
+in SYSTEMPATH\Database\Database.php on line 137.
+ 1 SYSTEMPATH\Database\Database.php(55): CodeIgniter\Database\Database->initDriver('MySQL', 'Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Categoria.php(11): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Categoria->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 03:39:19 --> Class "CodeIgniter\Database\MySQL\Connection" not found
+in SYSTEMPATH\Database\Database.php on line 137.
+ 1 SYSTEMPATH\Database\Database.php(55): CodeIgniter\Database\Database->initDriver('MySQL', 'Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Categoria.php(11): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Categoria->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 03:41:27 --> Class "CodeIgniter\Database\MySQL\Connection" not found
+in SYSTEMPATH\Database\Database.php on line 137.
+ 1 SYSTEMPATH\Database\Database.php(55): CodeIgniter\Database\Database->initDriver('MySQL', 'Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Categoria.php(11): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Categoria->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 03:41:44 --> Class "CodeIgniter\Database\MySQL\Connection" not found
+in SYSTEMPATH\Database\Database.php on line 137.
+ 1 SYSTEMPATH\Database\Database.php(55): CodeIgniter\Database\Database->initDriver('MySQL', 'Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Categoria.php(11): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Categoria->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 03:47:43 --> Class "CodeIgniter\Database\mysql\Connection" not found
+in SYSTEMPATH\Database\Database.php on line 137.
+ 1 SYSTEMPATH\Database\Database.php(55): CodeIgniter\Database\Database->initDriver('mysql', 'Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Categoria.php(11): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Categoria->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 03:47:44 --> Class "CodeIgniter\Database\mysql\Connection" not found
+in SYSTEMPATH\Database\Database.php on line 137.
+ 1 SYSTEMPATH\Database\Database.php(55): CodeIgniter\Database\Database->initDriver('mysql', 'Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Categoria.php(11): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Categoria->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 04:39:27 --> Class "CodeIgniter\Database\mysql\Connection" not found
+in SYSTEMPATH\Database\Database.php on line 137.
+ 1 SYSTEMPATH\Database\Database.php(55): CodeIgniter\Database\Database->initDriver('mysql', 'Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Categoria.php(11): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Categoria->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 04:39:30 --> Class "CodeIgniter\Database\mysql\Connection" not found
+in SYSTEMPATH\Database\Database.php on line 137.
+ 1 SYSTEMPATH\Database\Database.php(55): CodeIgniter\Database\Database->initDriver('mysql', 'Connection', [...])
+ 2 SYSTEMPATH\Database\Config.php(82): CodeIgniter\Database\Database->load([...], 'default')
+ 3 SYSTEMPATH\Model.php(155): CodeIgniter\Database\Config::connect('default')
+ 4 APPPATH\Controllers\Categoria.php(11): CodeIgniter\Model->__construct()
+ 5 SYSTEMPATH\CodeIgniter.php(904): App\Controllers\Categoria->__construct()
+ 6 SYSTEMPATH\CodeIgniter.php(488): CodeIgniter\CodeIgniter->createController()
+ 7 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 05:20:00 --> Invalid file: "gestionarCategoria/categoria.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarCategoria/categoria.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarCategoria/categoria', [], true)
+ 3 APPPATH\Controllers\Categoria.php(18): view('gestionarCategoria/categoria', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 05:54:31 --> Call to undefined method App\Models\CategoriaModel::getCategoria
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\Categoria.php(15): CodeIgniter\Model->__call('getCategoria', [])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 05:54:55 --> Call to undefined method App\Models\CategoriaModel::getCategoria
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\Categoria.php(15): CodeIgniter\Model->__call('getCategoria', [])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 05:55:55 --> Call to undefined method App\Models\CategoriaModel::getCategoria
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\Categoria.php(15): CodeIgniter\Model->__call('getCategoria', [])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 05:55:57 --> Call to undefined method App\Models\CategoriaModel::getCategoria
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\Categoria.php(15): CodeIgniter\Model->__call('getCategoria', [])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 05:56:07 --> Call to undefined method App\Models\CategoriaModel::getCategoria
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\Categoria.php(15): CodeIgniter\Model->__call('getCategoria', [])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 05:56:11 --> Call to undefined method App\Models\CategoriaModel::getCategoria
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\Categoria.php(15): CodeIgniter\Model->__call('getCategoria', [])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categoria->getIndex()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-05 06:03:38 --> Invalid file: "gestionarCategoria/crear.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarCategoria/crear.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarCategoria/crear', [], true)
+ 3 APPPATH\Controllers\Categoria.php(25): view('gestionarCategoria/crear', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Categoria->getCrearCategoria()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Categoria))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()

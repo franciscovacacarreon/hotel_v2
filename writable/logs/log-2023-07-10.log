@@ -1,0 +1,650 @@
+CRITICAL - 2023-07-10 03:08:01 --> Call to undefined method App\Models\RolModel::mostrar
+in SYSTEMPATH\Model.php on line 838.
+ 1 APPPATH\Controllers\Usuario.php(112): CodeIgniter\Model->__call('mostrar', [])
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCrear()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 03:10:06 --> Undefined variable $usuarios
+in APPPATH\Views\gestionarUsuario\mostrarUsuario.php on line 26.
+ 1 APPPATH\Views\gestionarUsuario\mostrarUsuario.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuarios', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\mostrarUsuario.php', 26)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\mostrarUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/mostrarUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(115): view('gestionarUsuario/mostrarUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCrear()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 03:10:37 --> Undefined variable $usuarios
+in APPPATH\Views\gestionarUsuario\mostrarUsuario.php on line 26.
+ 1 APPPATH\Views\gestionarUsuario\mostrarUsuario.php(26): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $usuarios', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\mostrarUsuario.php', 26)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\mostrarUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/mostrarUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(115): view('gestionarUsuario/mostrarUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCrear()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 03:12:38 --> Undefined variable $Recepcionistas
+in APPPATH\Views\gestionarUsuario\crearUsuario.php on line 47.
+ 1 APPPATH\Views\gestionarUsuario\crearUsuario.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $Recepcionistas', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\crearUsuario.php', 47)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\crearUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/crearUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(115): view('gestionarUsuario/crearUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCrear()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 03:13:09 --> Undefined array key "id"
+in APPPATH\Views\gestionarUsuario\crearUsuario.php on line 65.
+ 1 APPPATH\Views\gestionarUsuario\crearUsuario.php(65): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "id"', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\crearUsuario.php', 65)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\crearUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/crearUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(115): view('gestionarUsuario/crearUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCrear()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 03:28:24 --> Undefined variable $recepcionistas
+in APPPATH\Views\gestionarUsuario\crearUsuario.php on line 47.
+ 1 APPPATH\Views\gestionarUsuario\crearUsuario.php(47): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $recepcionistas', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\crearUsuario.php', 47)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\crearUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/crearUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(136): view('gestionarUsuario/crearUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->postInsertar()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:06:01 --> Undefined array key 0
+in APPPATH\Views\gestionarUsuario\editarUsuario.php on line 57.
+ 1 APPPATH\Views\gestionarUsuario\editarUsuario.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\editarUsuario.php', 57)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\editarUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/editarUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(152): view('gestionarUsuario/editarUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEditar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:07:51 --> Undefined array key 0
+in APPPATH\Views\gestionarUsuario\editarUsuario.php on line 57.
+ 1 APPPATH\Views\gestionarUsuario\editarUsuario.php(57): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key 0', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\editarUsuario.php', 57)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\editarUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/editarUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(152): view('gestionarUsuario/editarUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEditar('1')
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:17:10 --> Trying to access array offset on value of type null
+in APPPATH\Views\gestionarUsuario\editarUsuario.php on line 17.
+ 1 APPPATH\Views\gestionarUsuario\editarUsuario.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\editarUsuario.php', 17)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\editarUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/editarUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(152): view('gestionarUsuario/editarUsuario', [...])
+ 6 APPPATH\Controllers\Usuario.php(173): App\Controllers\Usuario->getEditar('id_usuario')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->postActualizar()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:17:33 --> Trying to access array offset on value of type null
+in APPPATH\Views\gestionarUsuario\editarUsuario.php on line 17.
+ 1 APPPATH\Views\gestionarUsuario\editarUsuario.php(17): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\editarUsuario.php', 17)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\editarUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/editarUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(152): view('gestionarUsuario/editarUsuario', [...])
+ 6 APPPATH\Controllers\Usuario.php(173): App\Controllers\Usuario->getEditar('id_usuario')
+ 7 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->postActualizar()
+ 8 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 9 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:33:23 --> Invalid file: "gestionarUsuarios/eliminarUsuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuarios/eliminarUsuario.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuarios/eliminarUsuario', [], true)
+ 3 APPPATH\Controllers\Usuario.php(185): view('gestionarUsuarios/eliminarUsuario', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEliminados()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:43:27 --> Invalid file: "gestionarUsuarios/eliminarUsuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuarios/eliminarUsuario.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuarios/eliminarUsuario', [], true)
+ 3 APPPATH\Controllers\Usuario.php(185): view('gestionarUsuarios/eliminarUsuario', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEliminados()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:43:44 --> Invalid file: "gestionarUsuarios/eliminarUsuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuarios/eliminarUsuario.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuarios/eliminarUsuario', [], true)
+ 3 APPPATH\Controllers\Usuario.php(185): view('gestionarUsuarios/eliminarUsuario', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEliminados()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:47:07 --> Invalid file: "gestionarUsuarios/eliminarUsuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuarios/eliminarUsuario.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuarios/eliminarUsuario', [], true)
+ 3 APPPATH\Controllers\Usuario.php(185): view('gestionarUsuarios/eliminarUsuario', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEliminados()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:48:43 --> Invalid file: "gestionarUsuarios/eliminarUsuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuarios/eliminarUsuario.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuarios/eliminarUsuario', [], true)
+ 3 APPPATH\Controllers\Usuario.php(185): view('gestionarUsuarios/eliminarUsuario', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEliminados()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:51:07 --> Invalid file: "gestionarUsuarios/eliminarUsuario.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuarios/eliminarUsuario.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuarios/eliminarUsuario', [], true)
+ 3 APPPATH\Controllers\Usuario.php(185): view('gestionarUsuarios/eliminarUsuario', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEliminados()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:54:25 --> Undefined array key "rol"
+in APPPATH\Views\gestionarUsuario\eliminarUsuario.php on line 35.
+ 1 APPPATH\Views\gestionarUsuario\eliminarUsuario.php(35): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "rol"', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\eliminarUsuario.php', 35)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\eliminarUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/eliminarUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(185): view('gestionarUsuario/eliminarUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+CRITICAL - 2023-07-10 04:55:07 --> Undefined variable $dato
+in APPPATH\Views\gestionarUsuario\eliminarUsuario.php on line 39.
+ 1 APPPATH\Views\gestionarUsuario\eliminarUsuario.php(39): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\eliminarUsuario.php', 39)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\eliminarUsuario.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/eliminarUsuario', [], true)
+ 5 APPPATH\Controllers\Usuario.php(185): view('gestionarUsuario/eliminarUsuario', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getEliminados()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 05:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 05:25:35 --> Invalid file: "header.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('header.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('header', [], true)
+ 3 APPPATH\Controllers\Usuario.php(255): view('header')
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCambiaPassword()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 05:26:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 05:26:14 --> Invalid file: "gestionarUsuario/cambiaPassoword.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuario/cambiaPassoword.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/cambiaPassoword', [], true)
+ 3 APPPATH\Controllers\Usuario.php(256): view('gestionarUsuario/cambiaPassoword', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCambiaPassword()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 05:27:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 05:27:04 --> Invalid file: "gestionarUsuario/cambiaPassoword.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuario/cambiaPassoword.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/cambiaPassoword', [], true)
+ 3 APPPATH\Controllers\Usuario.php(256): view('gestionarUsuario/cambiaPassoword', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCambiaPassword()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 05:27:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 05:27:43 --> Invalid file: "gestionarUsuario/cambiaPassoword.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuario/cambiaPassoword.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/cambiaPassoword', [], true)
+ 3 APPPATH\Controllers\Usuario.php(256): view('gestionarUsuario/cambiaPassoword', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCambiaPassword()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 05:28:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 05:28:33 --> Invalid file: "gestionarUsuario/cambiaPassoword.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuario/cambiaPassoword.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/cambiaPassoword', [], true)
+ 3 APPPATH\Controllers\Usuario.php(256): view('gestionarUsuario/cambiaPassoword', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCambiaPassword()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 05:28:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 05:28:51 --> Invalid file: "gestionarUsuario/cambiaPassoword.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuario/cambiaPassoword.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/cambiaPassoword', [], true)
+ 3 APPPATH\Controllers\Usuario.php(256): view('gestionarUsuario/cambiaPassoword', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCambiaPassword()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 05:31:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 05:31:41 --> Invalid file: "gestionarUsuario/cambiaPassoword.php"
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 33.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('gestionarUsuario/cambiaPassoword.php')
+ 2 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/cambiaPassoword', [], true)
+ 3 APPPATH\Controllers\Usuario.php(256): view('gestionarUsuario/cambiaPassoword', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCambiaPassword()
+ 5 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 6 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 05:32:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 05:32:30 --> Trying to access array offset on value of type null
+in APPPATH\Views\gestionarUsuario\cambiaPassword.php on line 18.
+ 1 APPPATH\Views\gestionarUsuario\cambiaPassword.php(18): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Trying to access array offset on value of type null', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\cambiaPassword.php', 18)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarUsuario\\cambiaPassword.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarUsuario/cambiaPassword', [], true)
+ 5 APPPATH\Controllers\Usuario.php(256): view('gestionarUsuario/cambiaPassword', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->getCambiaPassword()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 05:36:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:36:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:37:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:39:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:39:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:39:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:40:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:40:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:41:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:41:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:49:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:49:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:49:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:49:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:53:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:54:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:56:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:57:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:58:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:58:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 05:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:00:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:01:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:03:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:03:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:04:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:05:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:05:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:05:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:06:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:06:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:08:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:08:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:09:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:09:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:12:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:12:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:12:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:15:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:15:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:15:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:19:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:19:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:19:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:20:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:20:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:22:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:22:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:22:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:25:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:25:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:25:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:26:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:27:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:27:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 06:28:03 --> Undefined array key "rol"
+in APPPATH\Controllers\Usuario.php on line 230.
+ 1 APPPATH\Controllers\Usuario.php(230): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "rol"', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Controllers\\Usuario.php', 230)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 06:29:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 06:30:01 --> Undefined array key "rol"
+in APPPATH\Controllers\Usuario.php on line 230.
+ 1 APPPATH\Controllers\Usuario.php(230): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "rol"', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Controllers\\Usuario.php', 230)
+ 2 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+ 3 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 4 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 5 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 06:31:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-10 06:31:57 --> mysqli_sql_exception: Unknown column 'admin2' in 'where clause' in C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT usuario....', 0)
+#1 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT usuario....')
+#2 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT usuario....')
+#3 C:\xampp\htdocs\hotel_v2\app\Models\UsuarioModel.php(73): CodeIgniter\Database\BaseConnection->query('SELECT usuario....')
+#4 C:\xampp\htdocs\hotel_v2\app\Controllers\Usuario.php(222): App\Models\UsuarioModel->mostrarPorUsuario('admin2')
+#5 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+#6 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+#7 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\hotel_v2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#9 {main}
+CRITICAL - 2023-07-10 06:31:57 --> Unknown column 'admin2' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT usuario.*, rol.nombre as rol
+                FROM usuario, rol
+                WHERE usuario.id_rol = rol.id_rol 
+                AND usuario.estado = 1
+                AND usuario.usuario = admin2', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT usuario.*, rol.nombre as rol
+                FROM usuario, rol
+                WHERE usuario.id_rol = rol.id_rol 
+                AND usuario.estado = 1
+                AND usuario.usuario = admin2')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT usuario.*, rol.nombre as rol
+                FROM usuario, rol
+                WHERE usuario.id_rol = rol.id_rol 
+                AND usuario.estado = 1
+                AND usuario.usuario = admin2')
+ 4 APPPATH\Models\UsuarioModel.php(73): CodeIgniter\Database\BaseConnection->query('SELECT usuario.*, rol.nombre as rol
+                FROM usuario, rol
+                WHERE usuario.id_rol = rol.id_rol 
+                AND usuario.estado = 1
+                AND usuario.usuario = admin2')
+ 5 APPPATH\Controllers\Usuario.php(222): App\Models\UsuarioModel->mostrarPorUsuario('admin2')
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 06:33:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:33:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:33:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:33:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:34:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:34:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:34:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:34:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:34:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:45:43 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-10 06:46:07 --> mysqli_sql_exception: Table 'hotel_jaldin_bolivar.tiposervicio' doesn't exist in C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\hotel_v2\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\hotel_v2\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\hotel_v2\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\hotel_v2\app\Models\TipoServicioModel.php(40): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\hotel_v2\app\Controllers\TipoServicio.php(34): App\Models\TipoServicioModel->mostrar()
+#8 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(932): App\Controllers\TipoServicio->getIndex()
+#9 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TipoServicio))
+#10 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\hotel_v2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-10 06:46:07 --> Table 'hotel_jaldin_bolivar.tiposervicio' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `TipoServicio`
+WHERE `estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `TipoServicio`
+WHERE `estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `TipoServicio`
+WHERE `estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `TipoServicio`
+WHERE `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\TipoServicioModel.php(40): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\TipoServicio.php(34): App\Models\TipoServicioModel->mostrar()
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TipoServicio->getIndex()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TipoServicio))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 06:47:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:47:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:48:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:49:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-10 06:49:09 --> mysqli_sql_exception: Table 'hotel_jaldin_bolivar.tiposervicio' doesn't exist in C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php:295
+Stack trace:
+#0 C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\xampp\htdocs\hotel_v2\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\hotel_v2\system\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\hotel_v2\system\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\hotel_v2\app\Models\TipoServicioModel.php(40): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\hotel_v2\app\Controllers\TipoServicio.php(34): App\Models\TipoServicioModel->mostrar()
+#8 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(932): App\Controllers\TipoServicio->getIndex()
+#9 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TipoServicio))
+#10 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\hotel_v2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#12 {main}
+CRITICAL - 2023-07-10 06:49:09 --> Table 'hotel_jaldin_bolivar.tiposervicio' doesn't exist
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 295.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(295): mysqli->query('SELECT *
+FROM `TipoServicio`
+WHERE `estado` = 1', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(692): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `TipoServicio`
+WHERE `estado` = 1')
+ 3 SYSTEMPATH\Database\BaseConnection.php(606): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `TipoServicio`
+WHERE `estado` = 1')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `TipoServicio`
+WHERE `estado` = :estado:', [...], false)
+ 5 SYSTEMPATH\Model.php(241): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(618): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Models\TipoServicioModel.php(40): CodeIgniter\BaseModel->findAll()
+ 8 APPPATH\Controllers\TipoServicio.php(34): App\Models\TipoServicioModel->mostrar()
+ 9 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TipoServicio->getIndex()
+10 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TipoServicio))
+11 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 06:51:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:51:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:51:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2023-07-10 06:51:42 --> Undefined variable $dato
+in APPPATH\Views\gestionarTipoServicio\mostrarTipoServicio.php on line 62.
+ 1 APPPATH\Views\gestionarTipoServicio\mostrarTipoServicio.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $dato', 'C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarTipoServicio\\mostrarTipoServicio.php', 62)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\hotel_v2\\app\\Views\\gestionarTipoServicio\\mostrarTipoServicio.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1180): CodeIgniter\View\View->render('gestionarTipoServicio/mostrarTipoServicio', [], true)
+ 5 APPPATH\Controllers\TipoServicio.php(37): view('gestionarTipoServicio/mostrarTipoServicio', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\TipoServicio->getIndex()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\TipoServicio))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 06:53:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:54:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:54:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:54:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:55:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:55:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:56:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:56:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:56:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:56:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:57:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:57:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:58:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:58:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:58:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:58:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:58:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:58:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:58:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:58:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:13 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 06:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:01:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-10 16:01:51 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost:3307', 'root', '', 'hotel_jaldin_bo...', 3307, '', 0)
+#1 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\hotel_v2\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\hotel_v2\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\hotel_v2\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\hotel_v2\app\Controllers\Usuario.php(222): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+#8 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+#9 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\hotel_v2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\hotel_v2\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\hotel_v2\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\hotel_v2\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\hotel_v2\app\Controllers\Usuario.php(222): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+#7 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+#8 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\hotel_v2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-10 16:01:51 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Usuario.php(222): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 16:01:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2023-07-10 16:02:06 --> Error connecting to the database: mysqli_sql_exception: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php:174
+Stack trace:
+#0 C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php(174): mysqli->real_connect('localhost:3307', 'root', '', 'hotel_jaldin_bo...', 3307, '', 0)
+#1 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp\htdocs\hotel_v2\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp\htdocs\hotel_v2\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\hotel_v2\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#6 C:\xampp\htdocs\hotel_v2\app\Controllers\Usuario.php(222): CodeIgniter\BaseModel->first()
+#7 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+#8 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+#9 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\hotel_v2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#11 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión in C:\xampp\htdocs\hotel_v2\system\Database\MySQLi\Connection.php:218
+Stack trace:
+#0 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(391): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp\htdocs\hotel_v2\system\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp\htdocs\hotel_v2\system\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp\htdocs\hotel_v2\system\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp\htdocs\hotel_v2\system\BaseModel.php(656): CodeIgniter\Model->doFirst()
+#5 C:\xampp\htdocs\hotel_v2\app\Controllers\Usuario.php(222): CodeIgniter\BaseModel->first()
+#6 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+#7 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+#8 C:\xampp\htdocs\hotel_v2\system\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp\htdocs\hotel_v2\public\index.php(67): CodeIgniter\CodeIgniter->run()
+#10 {main}
+CRITICAL - 2023-07-10 16:02:06 --> Unable to connect to the database.
+Main connection [MySQLi]: No se puede establecer una conexión ya que el equipo de destino denegó expresamente dicha conexión
+in SYSTEMPATH\Database\BaseConnection.php on line 427.
+ 1 SYSTEMPATH\Database\BaseConnection.php(574): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1616): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`
+WHERE `usuario` = :usuario:
+ LIMIT 1', [...], false)
+ 3 SYSTEMPATH\Model.php(268): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(656): CodeIgniter\Model->doFirst()
+ 5 APPPATH\Controllers\Usuario.php(222): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH\CodeIgniter.php(932): App\Controllers\Usuario->postValida()
+ 7 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(366): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(67): CodeIgniter\CodeIgniter->run()
+INFO - 2023-07-10 16:26:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:26:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:26:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:26:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:26:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:26:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:26:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:26:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:26:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:27:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:41 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:28:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:29:00 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:29:02 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:29:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:29:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:29:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:29:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+INFO - 2023-07-10 16:29:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
