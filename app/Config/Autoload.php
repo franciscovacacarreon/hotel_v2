@@ -61,7 +61,11 @@ class Autoload extends AutoloadConfig
      *
      * @var array<string, string>
      */
-    public $classmap = [];
+
+     //Agregar las librerias externas que se utilizará, para el pdf
+    public $classmap = [
+        'FPDF' => APPPATH . 'ThirdParty/fpdf/fpdf.php',
+    ];
 
     /**
      * -------------------------------------------------------------------

@@ -16,10 +16,10 @@
 
                 <div class="form-group">
                     <div class="row">
-                        <div class="col-12 col-sm-6">
+                        <!-- <div class="col-12 col-sm-6">
                             <label for="">Numero de camas</label>
-                            <input class="form-control" id="numero_camas" name="numero_camas" type="number" value="<?php echo $habitacion['numero_camas']; ?>" autofocus required>
-                        </div>
+                            <input class="form-control" id="numero_camas" name="numero_camas" type="number" value="<?php //echo $habitacion['numero_camas']; ?>" autofocus required>
+                        </div> -->
 
                         <!-- categorias -->
                         <div class="col-12 col-sm-6">

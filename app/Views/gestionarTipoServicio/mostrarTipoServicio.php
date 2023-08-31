@@ -1,22 +1,54 @@
+
+<?php 
+  $session = session();
+?>
+
+
 <div id="layoutSidenav_content">
   <main>
     <div class="container-fluid px-4">
       <h4 class="mt-4"><?php echo $titulo ?></h4>
-      <div>
-        <p>
-          <a href="<?php echo base_url() ?>tipoServicio/crear" class="btn btn-info">Agregar</a>
-          <a href="<?php echo base_url() ?>tipoServicio/eliminados" class="btn btn-warning">Eliminados</a>
-        </p>
-      </div>
+      
+      <?php if ($session->id_rol == 1) {?>
+          <div class="my-3">
+            <p>
+              <a href="<?php echo base_url() ?>tipoServicio/crear" class="btn btn-info">Agregar</a>
+              <a href="<?php echo base_url() ?>tipoServicio/eliminados" class="btn btn-warning">Eliminados</a>
+            </p>
+          </div>
+      <?php }?>
+
+      <?php 
+        if (isset($error)) {
+          echo "<div id='error-alert' class='alert alert-danger'>
+                $error
+                </div>";
+
+          echo "
+
+          <script>
+            // Mostrar la etiqueta temporal durante 3 segundos
+            var etiquetaTemporal = document.getElementById('error-alert');
+            etiquetaTemporal.style.display = 'block'; // Mostrar la etiqueta
+            setTimeout(function() {
+              etiquetaTemporal.style.display = 'none'; // Ocultar la etiqueta después de 3 segundos
+            }, 5000); // 000 milisegundos = 3 segundos
+          </script>
+
+          ";
+        }
+        ?>
+
       <table id="datatablesSimple">
         <thead>
           <tr>
             <th>Id</th>
             <th>Nombre</th>
             <th>Descripcion</th>
-            <th>estado</th>
-            <th></th>
-            <th></th>
+            <?php if ($session->id_rol == 1) {?>
+              <th></th>
+              <th></th>
+            <?php }?>
           </tr>
         </thead>
         <tbody>
@@ -26,17 +58,23 @@
               <td><?php echo $dato['id_tipoServicio'] ?></td>
               <td><?php echo $dato['nombre'] ?></td>
               <td><?php echo $dato['descripcion'] ?></td>
-              <td><?php echo $dato['estado'] ?></td>
+
+              <?php if ($session->id_rol == 1) {?>
               <!-- boton para editar -->
               <td>
-                <a href="<?php echo base_url() ?>tipoServicio/editar/<?=$dato['id_tipoServicio']?>" class="btn btn-warning" ><i class="fa-sharp fa-light fa-pencil"></i>
+                <a href="<?php echo base_url() ?>tipoServicio/editar/<?= $dato['id_tipoServicio'] ?>" class="btn btn-warning btn-sm">
+                  <i class="fa-sharp fa-light fa-pencil"></i> Editar
                 </a>
               </td>
               <!-- boton para eliminar -->
               <td>
-                <a data-href="<?php echo base_url() ?>tipoServicio/eliminar/<?=$dato['id_tipoServicio']?>" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-placement="top" title="Eliminar Registro"><i class="fa-sharp fa-solid fa-trash"></i>
+                <a data-href="<?php echo base_url() ?>tipoServicio/eliminar/<?= $dato['id_tipoServicio'] ?>" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-placement="top" title="Eliminar Registro">
+                  <i class="fa fa-trash"></i> Eliminar
                 </a>
               </td>
+
+              <?php }?>
+
             </tr>
           <?php  } ?>
         </tbody>

@@ -10,6 +10,12 @@ use App\Models\RecepcionistaModel;
 //use App\Models\ClienteModel;
 use App\Models\RolModel;
 
+//para la vista administrador
+use App\Models\HabitacionModel;
+use App\Models\ServicioModel;
+use App\Models\TipoServicioModel;
+use App\Models\AccesoModel;
+
 //el nombre de la clase debe llevar el mismo nombre del archivo
 class Usuario extends BaseController
 {
@@ -19,12 +25,25 @@ class Usuario extends BaseController
     protected $reglas;
     protected $reglasLogin;
     protected $reglasCambia;
+    protected $acceso;
+    protected $session;
+
+    //para la vista administrador
+    protected $habitacion;
+    protected $servicio;
+    protected $tipoServicio;
 
     public function __construct()
     {
         $this->usuario = new UsuarioModel();
         $this->recepcionista = new RecepcionistaModel();
         $this->roles = new RolModel();
+        $this->session = Session();
+        //para la vista administrador
+        $this->habitacion = new HabitacionModel();
+        $this->servicio = new ServicioModel();
+        $this->tipoServicio = new TipoServicioModel();
+        $this->acceso = new AccesoModel();
 
         helper(['form']); //para que no se pierdan los datos escritos en la vista
 
@@ -162,7 +181,6 @@ class Usuario extends BaseController
     //actualizar el registro 
     public function postActualizar()
     {
-
         //para la validación
         if (
             $this->request->getMethod() == "post"
@@ -183,6 +201,7 @@ class Usuario extends BaseController
         }
     }
 
+    //mostrar eliminados
     public function getEliminados()
     {
         $usuarios = $this->usuario->mostrarEliminados();
@@ -213,6 +232,7 @@ class Usuario extends BaseController
         }
     }
 
+    //validar el inicio de sesión
     public function postValida()
     {
         if ($this->request->getMethod() == "post"  &&  $this->validate($this->reglasLogin)) {
@@ -234,12 +254,24 @@ class Usuario extends BaseController
                         'id_cliente' => $datosUsuario['id_cliente']
                     ];
 
+
+                    $ip = $_SERVER['REMOTE_ADDR']; //ip
+                    $detalles = $_SERVER['HTTP_USER_AGENT']; //detalles del navegador  
+
+                    $evento = 'Inicio de sesión';
+                    $this->acceso->crear(
+                            $datosUsuario['id_usuario'], 
+                            $evento, 
+                            $ip, 
+                            $detalles, 
+                        );
+
                     //estableciendo una sesión
                     $session = session();
                     //le pasamos los datos de la sesión
                     $session->set($datosSesion);
                     //redirecionar a la vista principal
-                    return redirect()->to(base_url() . 'habitacion');
+                    return redirect()->to(base_url() . 'administrador');
                 } else {
                     $data['error'] = "Las contraseñas no coinciden.";
                     //$this->getLogin();
@@ -257,9 +289,22 @@ class Usuario extends BaseController
     }
 
 
+    //cerrar sesión
     public function getLogout()
     {
         $session = session();
+
+        $ip = $_SERVER['REMOTE_ADDR']; 
+        $detalles = $_SERVER['HTTP_USER_AGENT']; 
+
+        $evento = 'Cierre de sesión';
+        $this->acceso->crear(
+                $session->id_usuario, 
+                $evento, 
+                $ip, 
+                $detalles, 
+            );
+
         $session->destroy(); //Cerrar sesion;
         return redirect()->to(base_url());
     }
@@ -274,9 +319,9 @@ class Usuario extends BaseController
         echo view('templates/footer');
     }
 
+    //actualizar contraseña
     public function postActualizarPassword()
     {
-
         if ($this->request->getMethod() == "post"  &&  $this->validate($this->reglasCambia)) {
 
             $session = session();
@@ -286,19 +331,47 @@ class Usuario extends BaseController
 
             $this->usuario->update($idUsuario, ['password' => $hash]);
             //redirecionamiento
-            $usuario = $this->usuario->motrarId($session->id_usuario);
+            $usuario = $this->usuario->mostrarId($session->id_usuario);
 
             $data = ['titulo' => 'Cambiar Contraseña', 'usuario' => $usuario, 'mensaje' => 'Contraseña Actualizada'];
             echo view('templates/header');
-            echo view('usuarios/cambiaPassword', $data);
+            echo view('gestionarUsuario/cambiaPassword', $data);
             echo view('templates/footer');
         } else {
             $session = session();
-            $usuario = $this->usuario->motrarId($session->id_usuario);
+            $usuario = $this->usuario->mostrarId($session->id_usuario);
             $data = ['titulo' => 'Cambiar Contraseña', 'usuario' => $usuario, 'validation' => $this->validator];
             echo view('templates/header');
-            echo view('templates/usuarios/cambiaPassword', $data);
+            echo view('gestionarUsuario/cambiaPassword', $data);
             echo view('templates/footer');
         }
     }
+
+    public function getAdministrador()
+    {
+        if (!isset($this->session->id_usuario)) {
+            return redirect()->to(base_url());
+        }
+
+        $servicios = $this->servicio->mostrar();
+        $datos = [
+            'habitacion' => $this->habitacion->cantidadHabitaciones(),
+            'habitacionDisponible' => $this->habitacion->cantidadHabitacionesDisponible(),
+            'habitacionOcupada' => $this->habitacion->cantidadHabitacionesOcupada(),
+            'habitacionMantenimiento' => $this->habitacion->cantidadHabitacionesMantenimiento(),
+            'cantidadHospedaje' => $this->habitacion->cantidadHospedajeDia(),
+            'cantidadServicio' => $this->habitacion->cantidadServicioDia()['cantidad_servicio'],
+            'cantidadCliente' => $this->habitacion->cantidadClienteDia()['cantidad_cliente'],
+            'servicios' => $servicios,
+            'tipoServicios' => $this->tipoServicio->mostrar()
+            
+        ];
+
+        echo view('templates/header');
+        echo view('gestionarAdministrador/administrador', $datos);
+        echo view('templates/footer');
+    }
 }
+
+
+//10703 lineas de codigos hasta la fecha 12/08/2023

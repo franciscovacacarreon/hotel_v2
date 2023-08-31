@@ -19,13 +19,15 @@ class UsuarioModel extends Model
     protected $useSoftDeletes = false;
 
     //ingresar el nombre de las columnas que estamos agregando, en este caso "unidades"
-    protected $allowedFields = ['usuario', 
-                                'password', 
-                                'estado', 
-                                'id_recepcionista', 
-                                'id_cliente', 
-                                'id_rol',
-                                'estado'];
+    protected $allowedFields = [
+        'usuario',
+        'password',
+        'estado',
+        'id_recepcionista',
+        'id_cliente',
+        'id_rol',
+        'estado'
+    ];
 
     // Dates
     //tipo de tiempo que utilizamos
@@ -46,9 +48,11 @@ class UsuarioModel extends Model
     //mostrar usuarios
     public function mostrar()
     {
-        $sql = "SELECT usuario.*, rol.nombre as rol
-                FROM usuario, rol
-                WHERE usuario.id_rol = rol.id_rol 
+        $sql = "SELECT usuario.*, rol.nombre as rol, 
+                CONCAT(recepcionista.nombre, ' ', recepcionista.paterno) as nombre_recepcionista
+                FROM usuario, rol, recepcionista
+                WHERE usuario.id_rol = rol.id_rol
+                AND usuario.id_recepcionista = recepcionista.id_recepcionista
                 AND usuario.estado = 1";
 
         $query = $this->db->query($sql);
@@ -62,6 +66,7 @@ class UsuarioModel extends Model
         return $this->where('id_usuario', $id_usuario)->first();
     }
 
+    //mostrar el usuario segun su nombre de usuario
     public function mostrarPorUsuario($usuario)
     {
         $sql = "SELECT usuario.*, rol.nombre as rol
@@ -76,13 +81,13 @@ class UsuarioModel extends Model
     }
 
     //Crear usuario
-    public function crear($usuario, 
-                        $password, 
-                        $id_recepcionista, 
-                        $id_cliente,
-                        $id_rol
-                        )
-    {
+    public function crear(
+        $usuario,
+        $password,
+        $id_recepcionista,
+        $id_cliente,
+        $id_rol
+    ) {
         $hash = password_hash($password, PASSWORD_DEFAULT);
 
         $resultado = $this->save(
@@ -100,31 +105,36 @@ class UsuarioModel extends Model
     }
 
     //editar usuario
-    public function editar( $id_usuario,
-                            $usuario, 
-                            $password, 
-                            $id_recepcionista, 
-                            $id_cliente,
-                            $id_rol)
-    {
+    public function editar(
+        $id_usuario,
+        $usuario,
+        $password,
+        $id_recepcionista,
+        $id_cliente,
+        $id_rol
+    ) {
         $hash = password_hash($password, PASSWORD_DEFAULT);
-        $resultado = $this->update($id_usuario, 
-        [
-            'usuario' => $usuario,
-            'password' => $hash,
-            'id_recepcionista' => $id_recepcionista,
-            'id_cliente' => $id_cliente,
-            'id_rol' => $id_rol,
-        ]);
+        $resultado = $this->update(
+            $id_usuario,
+            [
+                'usuario' => $usuario,
+                'password' => $hash,
+                'id_recepcionista' => $id_recepcionista,
+                'id_cliente' => $id_cliente,
+                'id_rol' => $id_rol,
+            ]
+        );
         return $resultado;
     }
 
     //mostrar los inactivos
     public function mostrarEliminados()
     {
-        $sql = "SELECT usuario.*, rol.nombre as rol
-                FROM usuario, rol
-                WHERE usuario.id_rol = rol.id_rol 
+        $sql = "SELECT usuario.*, rol.nombre as rol, 
+                CONCAT(recepcionista.nombre, ' ', recepcionista.paterno) as nombre_recepcionista
+                FROM usuario, rol, recepcionista
+                WHERE usuario.id_rol = rol.id_rol
+                AND usuario.id_recepcionista = recepcionista.id_recepcionista
                 AND usuario.estado = 0";
 
         $query = $this->db->query($sql);

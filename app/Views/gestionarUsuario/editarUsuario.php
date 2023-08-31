@@ -49,6 +49,7 @@
                             <label for="">Recepcionista</label>
                             <select class="form-control" name="id_recepcionista" id="id_recepcionista" required>
                                 
+                                <!--Selecionar el recepcionista de la base de datos -->
                                 <option value="">Seleccione un recepcionista</option>
                                 
                                 <?php foreach ($recepcionistas as $recepcionista) { ?>
@@ -76,6 +77,8 @@
                         <div class="col-12 col-sm-6">
 
                             <label for="">Rol</label>
+                            
+                            <!-- seleccionar el rol de la base de datos -->
                             <select class="form-control" name="id_rol" id="id_rol" required>
 
                                 <option value="">Selecionar rol</option>

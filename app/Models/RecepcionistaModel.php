@@ -88,13 +88,15 @@ class RecepcionistaModel extends Model
 
     //editar un recepcionista
     public function editar(
-        $id_recepcionista, 
-        $nombre, $paterno, 
-        $materno, $telefono, 
-        $fecha_nacimiento, 
-        $sexo, 
-        $sueldo)
-    {
+        $id_recepcionista,
+        $nombre,
+        $paterno,
+        $materno,
+        $telefono,
+        $fecha_nacimiento,
+        $sexo,
+        $sueldo
+    ) {
         $resultado = $this->update(
             $id_recepcionista,
             [

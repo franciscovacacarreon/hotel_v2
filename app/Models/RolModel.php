@@ -36,4 +36,26 @@
         public function mostrar() {
             return $this->where('estado', 1)->findAll();
         }
+
+        public function crear($nombre, $descripcion, $estado = 1) {
+            $resultado = $this->save([
+                'nombre' => $nombre,
+                'descripcion' => $descripcion,
+                'estado' => $estado,
+            ]);
+            return $resultado;
+        }
+
+        public function editar($id_rol, $nombre, $descripcion) {
+            $resultado = $this->update($id_rol, [
+                'nombre' => $nombre,
+                'descripcion' => $descripcion,
+            ]);
+            return $resultado;
+        }
+
+        public function mostrarId($id_rol) {
+            return $this->where('id_rol', $id_rol)->first();
+        }
+
     }

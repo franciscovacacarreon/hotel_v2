@@ -5,7 +5,7 @@
             <div>
                 <p>
                     <!-- boton para regresar a usuarios -->
-                    <a href="<?php echo base_url();?>usuario" class="btn btn-info">Regresar a Usuarios</a>
+                    <a href="<?php echo base_url(); ?>usuario" class="btn btn-info">Regresar a Usuarios</a>
                 </p>
             </div>
 
@@ -16,9 +16,9 @@
                         <th>Id</th>
                         <th>Usuario</th>
                         <th>Recepcionista</th>
-                        <th>Cliente</th>
+                        <!-- <th>Cliente</th> -->
                         <th>Rol</th>
-                        <th>Estado</th>
+
                         <th></th>
                     </tr>
                 </thead>
@@ -29,10 +29,10 @@
                         <tr>
                             <td><?php echo $usuario['id_usuario'] ?></td>
                             <td><?php echo $usuario['usuario'] ?></td>
-                            <td><?php echo $usuario['id_recepcionista'] ?></td>
-                            <td><?php echo $usuario['id_cliente'] ?></td>
+                            <td><?php echo $usuario['nombre_recepcionista'] ?></td>
+                            <!-- <td><?php //echo $usuario['id_cliente'] 
+                                        ?></td> -->
                             <td><?php echo $usuario['rol'] ?></td>
-                            <td><?php echo $usuario['estado'] ?></td>
                             <td>
                                 <!-- boton para restaurar el registro -->
                                 <a href="#" data-href="<?php echo base_url() . 'usuario/restaurar/' . $usuario['id_usuario']; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-placement="top" title="Reingresar Registro">

@@ -18,7 +18,6 @@
             <th>Fecha de Nacimiento</th>
             <th>Sexo</th>
             <th>Sueldo</th>
-            <th>Estado</th>
             <th></th>
           </tr>
         </thead>
@@ -34,7 +33,6 @@
               <td><?php echo $recepcionista['fecha_nacimiento'] ?></td>
               <td><?php echo $recepcionista['sexo'] ?></td>
               <td><?php echo $recepcionista['sueldo'] ?></td>
-              <td><?php echo $recepcionista['estado'] ?></td>
               <td>
                   <a href="#" data-href="<?php  echo base_url().'recepcionista/restaurar/'.$recepcionista['id_recepcionista'];?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma" data-placement="top" title="Reingresar Registro">
                       <i class="fas fa-arrow-alt-circle-up"></i>

@@ -2,3 +2,9 @@ system/
 tests/
 writable/
 .env
+composer.json
+LICENSE
+phpunit.xml.dist
+preload.php
+README.md
+spark

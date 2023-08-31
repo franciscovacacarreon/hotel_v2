@@ -81,7 +81,21 @@
 
         //cambiar estado a inactivo
         public function eliminar($id){
-            $consulta = $this->update($id, ['estado' => 0]);
+
+            $consulta = false;
+
+            $sql2 = "SELECT tiposervicio.* 
+                    FROM tiposervicio, servicio
+                    WHERE servicio.id_servicio = tiposervicio.id_tipoServicio
+                    AND servicio.estado = 1
+                    AND tiposervicio.estado = 1
+                    AND tiposervicio.id_tipoServicio = $id";
+
+            $query2 = $this->db->query($sql2);
+            $datos2 = $query2->getResultArray();
+            if (count($datos2) == 0) {
+                $consulta = $this->update($id, ['estado' => 0]);
+            }
             return $consulta;
         }
     }

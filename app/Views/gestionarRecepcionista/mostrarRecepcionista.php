@@ -4,8 +4,8 @@
       <h4 class="mt-4"><?php echo $titulo ?></h4>
       <div>
         <p>
-          <a href="<?php echo base_url();?>recepcionista/crear" class="btn btn-info">Agregar</a>
-          <a href="<?php echo base_url();?>recepcionista/eliminados" class="btn btn-warning">Eliminados</a>
+          <a href="<?php echo base_url(); ?>recepcionista/crear" class="btn btn-info">Agregar</a>
+          <a href="<?php echo base_url(); ?>recepcionista/eliminados" class="btn btn-warning">Eliminados</a>
         </p>
       </div>
       <table id="datatablesSimple">
@@ -19,7 +19,6 @@
             <th>Fecha de Nacimiento</th>
             <th>Sexo</th>
             <th>Sueldo</th>
-            <th>Estado</th>
             <th></th>
             <th></th>
           </tr>
@@ -36,13 +35,14 @@
               <td><?php echo $recepcionista['fecha_nacimiento'] ?></td>
               <td><?php echo $recepcionista['sexo'] ?></td>
               <td><?php echo $recepcionista['sueldo'] ?></td>
-              <td><?php echo $recepcionista['estado'] ?></td>
               <td>
-                <a href="<?php echo base_url().'recepcionista/editar/'.$recepcionista['id_recepcionista'];?>" class="btn btn-warning"><i class="fa-sharp fa-light fa-pencil"></i>
+                <a href="<?php echo base_url() . 'recepcionista/editar/' . $recepcionista['id_recepcionista']; ?>" class="btn btn-warning btn-sm">
+                  <i class="fa-sharp fa-light fa-pencil"></i> Editar
                 </a>
               </td>
               <td>
-                <a href="" data-href="<?php  echo base_url().'recepcionista/eliminar/'.$recepcionista['id_recepcionista'];?>"  data-bs-toggle="modal" data-bs-target="#modal-confirma" class="btn btn-danger" ><i class="fa-sharp fa-solid fa-trash"></i>
+                <a href="" data-href="<?php echo base_url() . 'recepcionista/eliminar/' . $recepcionista['id_recepcionista']; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" class="btn btn-danger btn-sm">
+                  <i class="fa fa-trash"></i> Eliminar
                 </a>
               </td>
             </tr>
@@ -53,8 +53,8 @@
   </main>
 
 
- <!-- Modal -->
- <div class="modal fade" id="modal-confirma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <!-- Modal -->
+  <div class="modal fade" id="modal-confirma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
         <div class="modal-header">

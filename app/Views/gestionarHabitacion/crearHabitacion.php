@@ -15,10 +15,10 @@
                 <div class="form-group">
 
                     <div class="row">
-                        <div class="col-12 col-sm-6">
+                        <!-- <div class="col-12 col-sm-6">
                             <label for="">Numero de camas</label>
                             <input class="form-control" id="numero_camas" name="numero_camas" type="number" autofocus required>
-                        </div>
+                        </div> -->
 
                         <!-- categorias activas -->
                         <div class="col-12 col-sm-6">
@@ -32,9 +32,7 @@
                                 <?php } ?>
                             </select>
                         </div>
-                    </div>
 
-                    <div class="row">
                         <!-- estado de las habitaciones -->
                         <div class="col-12 col-sm-6">
                             <label for="">Estado habitacion</label>
@@ -47,6 +45,8 @@
                             </select>
                         </div>
                     </div>
+
+                    
                 </div>
 
                 <!-- botón para regresar a la vista habitaciones -->

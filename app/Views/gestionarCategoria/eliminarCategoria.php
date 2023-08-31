@@ -16,7 +16,6 @@
             <th>Id</th>
             <th>Nombre</th>
             <th>Descripcion</th>
-            <th>estado</th>
             <th></th>
           </tr>
         </thead>
@@ -28,7 +27,6 @@
               <td><?php echo $dato['id'] ?></td>
               <td><?php echo $dato['nombre'] ?></td>
               <td><?php echo $dato['descripcion'] ?></td>
-              <td><?php echo $dato['estado'] ?></td>
               <td>
                 <!-- boton para restaurar el registro -->
                 <a href="#" data-href="<?php echo base_url() . 'categoria/restaurar/' . $dato['id']; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-placement="top" title="Reingresar Registro">

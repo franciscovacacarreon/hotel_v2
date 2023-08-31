@@ -1,13 +1,14 @@
 <div id="layoutSidenav_content">
     <main>
         <div class="container-fluid px-4">
-            <h4 class="mt-4"><?php echo $titulo;?></h4>
-            
-            <?php if(isset($validation)) {?>
+            <h4 class="mt-4"><?php echo $titulo; ?></h4>
+
+            <!-- para las validaciones -->
+            <?php if (isset($validation)) { ?>
                 <div class="alert alert-danger">
-                    <?php   echo $validation->listErrors();?>
+                    <?php echo $validation->listErrors(); ?>
                 </div>
-            <?php }?>
+            <?php } ?>
 
             <form method="POST" action="<?php echo base_url() ?>usuario/actualizarPassword" autocomplete="off">
 
@@ -15,12 +16,12 @@
                     <div class="row">
                         <div class="col-12 col-sm-6">
                             <label for="">Usuario</label>
-                            <input class="form-control" id="usuario" name="usuario" type="text" value="<?php  echo $usuario['usuario']?>" disabled>
+                            <input class="form-control" id="usuario" name="usuario" type="text" value="<?php echo $usuario['usuario'] ?>" disabled>
                         </div>
 
                         <div class="col-12 col-sm-6">
                             <label for="">Id Recepcionista</label>
-                            <input class="form-control" id="nombre" name="nombre" type="text" value="<?php  echo $usuario['id_recepcionista']?>" disabled>
+                            <input class="form-control" id="nombre" name="nombre" type="text" value="<?php echo $usuario['id_recepcionista'] ?>" disabled>
                         </div>
                     </div>
                 </div>
@@ -38,15 +39,16 @@
                     </div>
                 </div>
 
-                <a href="<?php echo base_url() ?>habitacion" class="btn btn-primary my-3">Regresar</a>
+                <a href="<?php echo base_url() ?>usuario" class="btn btn-primary my-3">Regresar</a>
 
                 <button type="submit" class="btn btn-success my-3">Guardar</button>
-                
-                <?php if(isset($mensaje)) {?>
-                <div class="alert alert-success">
-                    <?php   echo $mensaje?>
-                </div>
-            <?php }?>
+
+                <!-- mensaje de alerta -->
+                <?php if (isset($mensaje)) { ?>
+                    <div class="alert alert-success">
+                        <?php echo $mensaje ?>
+                    </div>
+                <?php } ?>
 
             </form>
 

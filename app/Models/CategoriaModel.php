@@ -37,6 +37,7 @@ class CategoriaModel extends Model
 
 
     //métodos 
+    
     //mostrar Categorias
     public function mostrar()
     {
@@ -81,7 +82,6 @@ class CategoriaModel extends Model
     //mostrar los inactivos
     public function mostrarEliminados()
     {
-        //select *from categoria where estado = 0; 
         $resultado = $this->where('estado', '0')->findAll();;
         return $resultado;
     }
@@ -90,8 +90,16 @@ class CategoriaModel extends Model
     //cambiar estado a inactivo
     public function eliminar($id)
     {
-        //true o false, (update, save)
-        $resultado = $this->update($id, ['estado' => '0']);
+        $resultado = false;
+        //para no eliminar las categorias que tienen una habitacion
+        $sql = "SELECT *FROM categoria, habitacion
+                WHERE habitacion.id_categoria = categoria.id
+                AND categoria.id = $id";
+        $query = $this->db->query($sql);
+        $datos = $query->getResultArray();
+        if (count($datos) == 0) {
+            $resultado = $this->update($id, ['estado' => '0']);
+        } 
         return $resultado;
     }
 

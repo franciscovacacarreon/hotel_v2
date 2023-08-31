@@ -1,0 +1,119 @@
+
+    body {
+      background-color: #f8f9fa;
+    }
+    .page-header {
+      padding: 20px;
+    }
+    .page-header ol.breadcrumb {
+      background-color: transparent;
+      padding: 0;
+      margin: 0;
+    }
+    .page-header ol.breadcrumb li {
+      display: inline;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+    .page-header ol.breadcrumb li.active {
+      font-weight: 600;
+    }
+    .main-container {
+      padding: 20px;
+    }
+    .info-stats4 {
+      background-color: #f1f1f1;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 20px;
+      transition: all 0.3s ease;
+    }
+    .info-stats4:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .info-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+    .info-stats4 h3 {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .info-stats4 p {
+      font-size: 16px;
+      margin: 0;
+      color: #888;
+    }
+    .info-stats4 .card-body {
+      padding: 0;
+    }
+    .quick-analytics {
+      padding: 10px;
+      text-align: left;
+      list-style: none;
+      margin: 0;
+    }
+    .quick-analytics a {
+      color: #333;
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      transition: background-color 0.2s;
+      border-radius: 5px;
+      margin-bottom: 5px;
+    }
+    .quick-analytics a:hover {
+      background-color: #f1f1f1;
+    }
+    .card {
+      border: none;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      transition: all 0.3s ease;
+      margin-bottom: 20px;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card-header {
+      background-color: #f1f1f1;
+      padding: 15px;
+      border-radius: 10px 10px 0 0;
+    }
+    .card-title {
+      font-size: 20px;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+    .card-body {
+      padding: 15px;
+    }
+    .customScroll5 {
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .project-activity {
+      padding: 0;
+      list-style: none;
+      margin: 0;
+    }
+    .project-activity .activity-list {
+      border-bottom: 1px solid #f1f1f1;
+      padding: 10px;
+    }
+    .project-activity .activity-list:last-child {
+      border-bottom: none;
+    }
+    .project-activity .date {
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .project-activity .info {
+      font-size: 14px;
+      margin: 0;
+      color: #888;
+    }
