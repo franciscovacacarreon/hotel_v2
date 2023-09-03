@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\ServicioModel;
 use App\Models\TipoServicioModel;
+use App\Models\DetalleRolPermisoModel;
 
 class Servicio extends BaseController
 {
@@ -12,6 +13,7 @@ class Servicio extends BaseController
     protected $servicio;
     //usamos el modelo tipoServicio para obtener las tipoServicios
     protected $tipoServicio;
+    protected $detalleRol;
     //reglas para las validaciones
     protected $reglas;
     protected $session;
@@ -20,6 +22,7 @@ class Servicio extends BaseController
     {
         $this->servicio = new ServicioModel();
         $this->tipoServicio = new TipoServicioModel();
+        $this->detalleRol = new DetalleRolPermisoModel();
         $this->session = Session();
 
         //validaciones
@@ -51,17 +54,47 @@ class Servicio extends BaseController
         ];
     }
 
+
+    //validar permisos
+    public function getSinPermiso()
+    {
+        echo view('templates/header');
+        echo view('gestionarRol/sinpermiso');
+        echo view('templates/footer');
+    }
+
+    public function verficarPermiso($permiso, $id_submodulo)
+    {
+        $permiso  = $this->detalleRol->verificarPermiso($this->session->id_rol, $permiso, $id_submodulo);
+        return $permiso;
+    }
+
     //metodo principal, mostrar servicio
     public function getIndex()
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $servicioConsulta = $this->servicio->mostrar();
-        $data = ['titulo' => 'Servicios', 'servicios' => $servicioConsulta];
-        echo view('templates/header');
-        echo view('gestionarServicio/mostrarServicio', $data);
-        echo view('templates/footer');
+        if (!$this->verficarPermiso('Servicios', 3)) {
+            $this->getSinPermiso();
+        } else {
+
+            $botonesClass = [
+                'botonAgregar' => $this->verficarPermiso('Agregar', 3) == false ? 'visually-hidden-focusable' : '',
+                'botonEliminados' => $this->verficarPermiso('Eliminados', 3) == false ? 'visually-hidden-focusable' : '',
+                'botonEditar' => $this->verficarPermiso('Editar', 3) == false ? 'disabled-link' : '',
+                'botonEliminar' => $this->verficarPermiso('Eliminar', 3) == false ? 'visually-hidden' : '',
+            ];
+            
+            $servicioConsulta = $this->servicio->mostrar();
+            $data = ['titulo' => 'Servicios', 
+                     'servicios' => $servicioConsulta,
+                     'botonesClass' => $botonesClass,
+                    ];
+            echo view('templates/header');
+            echo view('gestionarServicio/mostrarServicio', $data);
+            echo view('templates/footer');
+        }
     }
 
 

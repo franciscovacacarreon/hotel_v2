@@ -8,6 +8,8 @@ use App\Controllers\BaseController;
 use App\Models\RolModel;
 use App\Models\PermisoModel;
 use App\Models\DetalleRolPermisoModel;
+use App\Models\SubmoduloModel;
+use App\Models\ModuloModel;
 
 class Rol extends BaseController
 {
@@ -16,6 +18,8 @@ class Rol extends BaseController
     protected $rol;
     protected $permiso;
     protected $detalleRol;
+    protected $submodulo;
+    protected $modulo;
     //reglas para las validaciones
     protected $reglas;
     protected $reglasEdit;
@@ -26,6 +30,8 @@ class Rol extends BaseController
         $this->rol = new RolModel();
         $this->permiso = new PermisoModel();
         $this->detalleRol = new DetalleRolPermisoModel();
+        $this->submodulo = new SubmoduloModel();
+        $this->modulo = new ModuloModel();
         $this->session = Session();
 
         //validaciones
@@ -202,15 +208,26 @@ class Rol extends BaseController
     public function getDetalle($id_rol)
     {
         $permisos = $this->permiso->mostrar();
+        $submodulos = $this->submodulo->mostrar();
+        $modulos = $this->modulo->mostrar();
+        $datosDetalleRol =  $this->rol->mostrarDetalleRol($id_rol);
         $datos = array();
         //$this->detalleRol->verificarPermiso($id_rol, 'MenuHospedaje');
 
         $permisosAsignados = $this->detalleRol->permisosAsignados($id_rol);
         foreach ($permisosAsignados as $permisoAsignado) {
             $datos[$permisoAsignado['id_permiso']] = true;
-        } 
+        }
 
-        $data = ['titulo' => 'Asignar permisos', 'permisos' => $permisos, 'id_rol' => $id_rol, 'asignado' => $datos];
+        $data = [
+            'titulo' => 'Asignar permisos',
+            'permisos' => $permisos,
+            'id_rol' => $id_rol,
+            'asignado' => $datos,
+            'submodulos' => $submodulos,
+            'modulos' => $modulos,
+            'datosDetalleRol' => $datosDetalleRol,
+        ];
         echo view('templates/header');
         echo view('gestionarRol/detalle', $data);
         echo view('templates/footer');
@@ -218,16 +235,15 @@ class Rol extends BaseController
 
     public function postGuardaPermiso()
     {
-        if ($this->request->getMethod() == "post")  {
+        if ($this->request->getMethod() == "post") {
             $id_rol = $this->request->getPost('id_rol');
             $permisos = $this->request->getPost('permisos');
 
             $this->detalleRol->eliminar($id_rol);
             foreach ($permisos as $permiso) {
-                $resultado = $this->detalleRol->crear($id_rol, $permiso);    
+                $resultado = $this->detalleRol->crear($id_rol, $permiso);
             }
             $this->getIndex();
         }
-
     }
 }

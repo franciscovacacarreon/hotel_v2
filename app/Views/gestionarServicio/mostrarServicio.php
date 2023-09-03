@@ -12,8 +12,8 @@
       <?php if ($session->id_rol == 1) {?>
           <div class="mb-4">
             <!-- botones para agregar y ver eliminados -->
-            <a href="<?php echo base_url();?>servicio/crear" class="btn btn-info">Agregar</a>
-            <a href="<?php echo base_url();?>servicio/eliminados" class="btn btn-warning">Eliminados</a>
+            <a href="<?php echo base_url();?>servicio/crear" class="btn btn-info <?=$botonesClass['botonAgregar']?>">Agregar</a>
+            <a href="<?php echo base_url();?>servicio/eliminados" class="btn btn-warning <?=$botonesClass['botonEliminados']?>">Eliminados</a>
           </div>
       <?php }?>
 
@@ -47,11 +47,8 @@
             <th>Precio</th>
             <th>Descripción</th>
             <th>Tipo de Servicio</th>
-
-            <?php if ($session->id_rol == 1) {?>
-                <th></th>
-                <th></th>
-            <?php }?>
+            <th class="<?=$botonesClass['botonEditar']?>"></th>
+            <th class="<?=$botonesClass['botonEliminar']?>"></th>
           </tr>
         </thead>
         <tbody>
@@ -62,23 +59,19 @@
               <td><?php echo $servicio['precio'] ?></td>
               <td><?php echo $servicio['descripcion'] ?></td>
               <td><?php echo $servicio['nombre_tipoServicio'] ?></td>
-              
-              <?php if ($session->id_rol == 1) {?>
-              
-                <td>
-                <!-- botón para editar el registro -->
-                <a href="<?php echo base_url().'servicio/editar/'.$servicio['id_servicio'];?>" class="btn btn-warning btn-sm">
-                  <i class="fa fa-pencil"></i> Editar
-                </a>
-              </td>
-              <td>
-                <!-- botón para eliminar el registro -->
-                <a href="#" data-href="<?php echo base_url().'servicio/eliminar/'.$servicio['id_servicio'];?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" class="btn btn-danger btn-sm">
-                  <i class="fa fa-trash"></i> Eliminar
-                </a>
-              </td>
-
-              <?php }?>
+            
+              <td class="<?=$botonesClass['botonEditar']?>">
+              <!-- botón para editar el registro -->
+              <a href="<?php echo base_url().'servicio/editar/'.$servicio['id_servicio'];?>" class="btn btn-warning btn-sm">
+                <i class="fa fa-pencil"></i> Editar
+              </a>
+            </td>
+            <td class="<?=$botonesClass['botonEliminar']?>">
+              <!-- botón para eliminar el registro -->
+              <a href="#" data-href="<?php echo base_url().'servicio/eliminar/'.$servicio['id_servicio'];?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" class="btn btn-danger btn-sm">
+                <i class="fa fa-trash"></i> Eliminar
+              </a>
+            </td>
 
             </tr>
           <?php } ?>

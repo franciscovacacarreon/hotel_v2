@@ -10,7 +10,6 @@ use App\Models\DetalleHospedajeModel;
 use App\Models\ConfiguracionModel;
 use App\Models\HabitacionModel;
 use App\Models\DetalleRolPermisoModel;
-use App\Models\SubmoduloModel;
 use PDF;
 
 class NotaHospedaje extends BaseController
@@ -24,8 +23,6 @@ class NotaHospedaje extends BaseController
     protected $configuracion;
     protected $habitacion;
     protected $detalleRol;
-    protected $submodulo;
-    protected $id_modulo;
     protected $session;
     //protected $notaHospedaje;
 
@@ -38,7 +35,6 @@ class NotaHospedaje extends BaseController
         $this->configuracion = new ConfiguracionModel();
         $this->habitacion = new HabitacionModel();
         $this->detalleRol = new DetalleRolPermisoModel();
-        $this->submodulo = new SubmoduloModel();
         $this->session = Session();
         helper(['form']);
 
@@ -77,11 +73,11 @@ class NotaHospedaje extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        if (!$this->verficarPermiso('Hospedaje', 1)) {
+        if (!$this->verficarPermiso('Hospedaje', 2)) {
             $this->getSinPermiso();
         } else {
-            $botonDetalle = $this->verficarPermiso('Hospedaje Detalle', 1);
-            $botonFinalizar = $this->verficarPermiso('Hospedaje Finalizar', 1) == false ? 'disabled-link' : '';
+            $botonDetalle = $this->verficarPermiso('Hospedaje Detalle', 2);
+            $botonFinalizar = $this->verficarPermiso('Hospedaje Finalizar', 2) == false ? 'disabled-link' : '';
             $notaHospedajeConsulta = $this->notaHospedaje->mostrarConCliente();
             $data = ['titulo' => 'Hospedajes', 'validation' => $this->validator, 'notaHospedajes' => $notaHospedajeConsulta, 'botonDetalle' => $botonDetalle, 'botonFinalizar' => $botonFinalizar];
             echo view('templates/header');
@@ -105,7 +101,7 @@ class NotaHospedaje extends BaseController
             'habitaciones' => $habitaciones,
             'validation' => $this->validator
         ];
-        if (!$this->verficarPermiso('Nuevo Hospedaje', 1)) {
+        if (!$this->verficarPermiso('Nuevo Hospedaje', 2)) {
             $this->getSinPermiso();
         } else {
             echo view('templates/header');

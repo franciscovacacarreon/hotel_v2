@@ -7,17 +7,45 @@ $session = session();
     <div class="container-fluid px-4">
       <h4 class="mt-4"><?= $titulo ?></h4>
 
-      <form id="form-permiso" name="form-permiso" action="<?=base_url() . 'rol/guardaPermiso'?>" method="POST">
+      <form id="form-permiso" name="form-permiso" action="<?= base_url() . 'rol/guardaPermiso' ?>" method="POST">
 
-        <input type="hidden" name="id_rol" value="<?=$id_rol?>">
-        <?php foreach ($permisos as $permiso) {?>
+        <input type="hidden" name="id_rol" value="<?= $id_rol ?>">
 
-          <div class="form-check form-switch">
-            <input class="form-check-input" type="checkbox" value="<?=$permiso['id_permiso']?>" name="permisos[]" <?php if(isset($asignado[$permiso['id_permiso']])){ echo 'checked';}?>>
-            <label class="form-check-label" for="permiso-check-<?=$permiso['id_permiso']?>"><?=$permiso['nombre']?></label>
+        <div class="row row-equal">
+          <?php foreach ($modulos as $modulo) {?>
+
+            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
+              <div class="card mb-3">
+                <div class="card-header text-center">
+                  <?=$modulo['nombre']?>
+                </div>
+                <div class="card-body">
+
+                    <?php 
+                    foreach ($permisos as $permiso) { 
+                      
+                        if ($permiso['id_modulo'] == $modulo['id_modulo']) {
+                          
+                          if ($permiso['id_tipoPermiso'] == 2) {
+                            echo "<label class='fw-bold'>".$permiso['nombre']."</label>" ;
+                          }
+                    ?>
+
+                            <div class="form-check form-switch">
+                              <input class="form-check-input" type="checkbox" value="<?= $permiso['id_permiso'] ?>" name="permisos[]" <?php if (isset($asignado[$permiso['id_permiso']])) { echo 'checked';}?>>
+                              <label class="form-check-label"><?= $permiso['nombre'] ?></label>
+                            </div>
+
+                    <?php 
+                          } //endif 
+                      } //endforeach
+                    ?>
+                </div>
+            </div>
           </div>
-
-        <?php }?>
+          <?php }?>
+          
+        </div>
 
         <button type="submit" class="btn btn-primary">Guardar</button>
 
@@ -25,22 +53,3 @@ $session = session();
 
     </div>
   </main>
-
-  <!-- Modal para confirmar eliminación-->
-  <div class="modal fade" id="modal-confirma" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Eliminar registro</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>¿Desea eliminar este registro?</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-          <a class="btn btn-danger btn-ok">Sí</a>
-        </div>
-      </div>
-    </div>
-  </div>

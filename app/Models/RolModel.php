@@ -54,8 +54,27 @@
             return $resultado;
         }
 
-        public function mostrarId($id_rol) {
+        public function mostrarId($id_rol, $id_modulo) {
             return $this->where('id_rol', $id_rol)->first();
+        }
+
+        public function mostrarDetalleRol($id_rol) {
+            $this->select('rol.id_rol, 
+                        permiso.id_permiso, 
+                        permiso.nombre as nombre_permiso, 
+                        tipopermiso.id_tipoPermiso, 
+                        tipopermiso.nombre nombre_tipoPermiso, 
+                        submodulo.id_submodulo, 
+                        submodulo.nombre as nombre_submodulo, 
+                        modulo.id_modulo,
+                        modulo.nombre as nombre_modulo');
+            $this->join('detallerolpermiso', 'detallerolpermiso.id_rol = rol.id_rol');
+            $this->join('permiso', 'detallerolpermiso.id_permiso = permiso.id_permiso');
+            $this->join('tipopermiso', 'permiso.id_tipoPermiso = tipopermiso.id_tipoPermiso');
+            $this->join('submodulo', 'permiso.id_submodulo = submodulo.id_submodulo');
+            $this->join('modulo', 'submodulo.id_submodulo = modulo.id_modulo');
+            $resultado  = $this->where('rol.id_rol', $id_rol)->findAll();
+            return $resultado;
         }
 
     }

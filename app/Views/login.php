@@ -12,6 +12,7 @@ $user_session = session();
 <html>
 
 <head>
+<link rel="shortcut icon" href="<?php echo base_url() ?>assets/img/iconoHotel.png" rel="stylesheet" />
   <title>Iniciar sesión</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <style>

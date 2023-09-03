@@ -10,6 +10,7 @@ use App\Models\DetalleServicioModel;
 use App\Models\ConfiguracionModel;
 use App\Models\ServicioModel;
 use App\Models\NotaHospedajeModel;
+use App\Models\DetalleRolPermisoModel;
 use PDF;
 
 class NotaServicio extends BaseController
@@ -24,6 +25,7 @@ class NotaServicio extends BaseController
     protected $servicio;
     protected $notaHospedaje;
     protected $session;
+    protected $detalleRol;
 
     public function __construct()
     {
@@ -34,6 +36,7 @@ class NotaServicio extends BaseController
         $this->configuracion = new ConfiguracionModel();
         $this->servicio = new ServicioModel();
         $this->notaHospedaje = new NotaHospedajeModel();
+        $this->detalleRol = new DetalleRolPermisoModel();
         $this->session = Session();
         helper(['form']);
 
@@ -47,17 +50,36 @@ class NotaServicio extends BaseController
         ];
     }
 
+
+    //validar permisos
+    public function getSinPermiso()
+    {
+        echo view('templates/header');
+        echo view('gestionarRol/sinpermiso');
+        echo view('templates/footer');
+    }
+
+    public function verficarPermiso($permiso, $id_submodulo)
+    {
+        $permiso  = $this->detalleRol->verificarPermiso($this->session->id_rol, $permiso, $id_submodulo);
+        return $permiso;
+    }
+
     //metodo principal, mostrar nota de servicios
     public function getIndex()
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $NotaServicioConsulta = $this->notaServicio->mostrar();
-        $data = ['titulo' => 'Nota de servicios', 'notaServicios' => $NotaServicioConsulta];
-        echo view('templates/header');
-        echo view('gestionarNotaServicio/mostrarNotaServicio', $data);
-        echo view('templates/footer');
+        if (!$this->verficarPermiso('Notas de servicio', 3)) {
+            $this->getSinPermiso();
+        } else {
+            $NotaServicioConsulta = $this->notaServicio->mostrar();
+            $data = ['titulo' => 'Nota de servicios', 'notaServicios' => $NotaServicioConsulta];
+            echo view('templates/header');
+            echo view('gestionarNotaServicio/mostrarNotaServicio', $data);
+            echo view('templates/footer');
+        }
     }
 
 
@@ -68,26 +90,32 @@ class NotaServicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $clientes = $this->cliente->mostrar();
-        $servicios = $this->servicio->mostrar();
-        $hospedajes = $this->notaHospedaje->mostrar();
-        $data = ['titulo' => 'Nueva nota de servicio', 
-                'clientes' => $clientes, 
-                'servicios' => $servicios, 
+        if (!$this->verficarPermiso('Nueva nota servicio', 3)) {
+            $this->getSinPermiso();
+        } else {
+            $clientes = $this->cliente->mostrar();
+            $servicios = $this->servicio->mostrar();
+            $hospedajes = $this->notaHospedaje->mostrar();
+            $data = [
+                'titulo' => 'Nueva nota de servicio',
+                'clientes' => $clientes,
+                'servicios' => $servicios,
                 'notaHospedajes' => $hospedajes,
-                'validation' => $this->validator];
-        echo view('templates/header');
-        echo view('gestionarNotaServicio/crearNotaServicio', $data);
-        echo view('templates/footer');
+                'validation' => $this->validator
+            ];
+            echo view('templates/header');
+            echo view('gestionarNotaServicio/crearNotaServicio', $data);
+            echo view('templates/footer');
+        }
     }
 
     //guardar el servicio en la nota de servicio
-    public function postGuarda() 
+    public function postGuarda()
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        if ( $this->validate($this->reglas)) {       
+        if ($this->validate($this->reglas)) {
 
             $id_notaServicio = $this->request->getPost('id_notaServicio'); //folio
             $id_cliente = $this->request->getPost('id_cliente');
@@ -102,7 +130,7 @@ class NotaServicio extends BaseController
             //insertar los datos en el detalle servicio
             if ($resultadoId) {
                 $resultadoNotaServicio = $this->temporal_servicio->porIdNotaServicio($id_notaServicio);
-                
+
                 foreach ($resultadoNotaServicio as $row) {
                     $this->detalleServicio->crear(
                         $resultadoId,
@@ -140,17 +168,17 @@ class NotaServicio extends BaseController
     ];*/
 
     //generar el pdf
-    public function getGeneraNotaServicioPdf($id_notaServicio) 
+    public function getGeneraNotaServicioPdf($id_notaServicio)
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $datosNotaServicio = $this->notaServicio->mostrarNotaServicioId($id_notaServicio); 
+        $datosNotaServicio = $this->notaServicio->mostrarNotaServicioId($id_notaServicio);
         $datosDetalleNotaServicio = $this->notaServicio->mostrarDetalleNotaServicio($id_notaServicio);
         $datosHotel = $this->configuracion->mostrar();
-        
+
         //creando el pdf
-                        //orientacion, medida (ml), tamaño = letter = carta
+        //orientacion, medida (ml), tamaño = letter = carta
         $pdf = new \FPDF('P', 'mm', 'letter');
         $pdf->AddPage();
         $pdf->SetMargins(10, 10, 10);
@@ -158,7 +186,7 @@ class NotaServicio extends BaseController
         $pdf->SetFont('Arial', 'B', 12);
 
         //Agregado una tabla
-                //ancho, alto, titulo, bordes, salto de líne, posicion
+        //ancho, alto, titulo, bordes, salto de líne, posicion
         $pdf->Cell(195, 5, "Servicios realizados", 0, 1, 'C');
 
         //indicar que estamos trabajando con pdf
@@ -213,7 +241,5 @@ class NotaServicio extends BaseController
         $pdf->image(base_url() . 'assets/img/iconoHotel.png', 185, 10, 20, 20, 'PNG');
 
         $pdf->Output("nota_servicio.pdf", "I");
-
     }
-
 }
