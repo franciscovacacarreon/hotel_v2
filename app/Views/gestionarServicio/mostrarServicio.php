@@ -60,15 +60,15 @@
               <td><?php echo $servicio['descripcion'] ?></td>
               <td><?php echo $servicio['nombre_tipoServicio'] ?></td>
             
-              <td class="<?=$botonesClass['botonEditar']?>">
+              <td>
               <!-- botón para editar el registro -->
-              <a href="<?php echo base_url().'servicio/editar/'.$servicio['id_servicio'];?>" class="btn btn-warning btn-sm">
+              <a href="<?php echo base_url().'servicio/editar/'.$servicio['id_servicio'];?>" class="<?=$botonesClass['botonEditar']?>">
                 <i class="fa fa-pencil"></i> Editar
               </a>
             </td>
-            <td class="<?=$botonesClass['botonEliminar']?>">
+            <td>
               <!-- botón para eliminar el registro -->
-              <a href="#" data-href="<?php echo base_url().'servicio/eliminar/'.$servicio['id_servicio'];?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" class="btn btn-danger btn-sm">
+              <a href="#" data-href="<?php echo base_url().'servicio/eliminar/'.$servicio['id_servicio'];?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" class="<?=$botonesClass['botonEliminar']?>">
                 <i class="fa fa-trash"></i> Eliminar
               </a>
             </td>

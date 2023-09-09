@@ -8,6 +8,7 @@ use App\Controllers\BaseController;
 use App\Models\HabitacionModel;
 use App\Models\DetalleRolPermisoModel;
 use App\Models\SubmoduloModel;
+use App\Models\NotaHospedajeModel;
 
 
 class Recepcion extends BaseController
@@ -18,6 +19,7 @@ class Recepcion extends BaseController
     protected $detalleRol;
     protected $submodulo;
     protected $id_modulo;
+    protected $notaHospedaje;
     //reglas para las validaciones
     protected $reglas;
     protected $session;
@@ -27,6 +29,7 @@ class Recepcion extends BaseController
         $this->habitacion = new HabitacionModel();
         $this->detalleRol = new DetalleRolPermisoModel();
         $this->submodulo = new SubmoduloModel();
+        $this->notaHospedaje = new NotaHospedajeModel();
         $this->session = Session();
 
         //validaciones
@@ -82,5 +85,14 @@ class Recepcion extends BaseController
             echo view('gestionarRecepcion/mostrarRecepcion', $data);
             echo view('templates/footer');
         }
+    }
+
+    public function getFinalizarHospedaje($id_notaHospedaje)
+    {
+        if (!$this->verficarPermiso('Recepción Finalizar', 1)  ||  !$this->verficarPermiso('Recepción', 1)) {
+            return $this->getSinPermiso();
+        }
+        $this->notaHospedaje->finalizarHospedaje($id_notaHospedaje, 'Disponible');
+        return redirect()->to(base_url() . 'habitacion');
     }
 }

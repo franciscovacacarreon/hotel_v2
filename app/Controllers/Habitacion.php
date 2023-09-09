@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Controllers\BaseController;
 use App\Models\HabitacionModel;
 use App\Models\CategoriaModel;
+use App\Models\DetalleRolPermisoModel;
 
 class Habitacion extends BaseController
 {
@@ -12,6 +13,7 @@ class Habitacion extends BaseController
     protected $habitacion;
     //usamos el modelo categoria para obtener las categorias
     protected $categoria;
+    protected $detalleRol;
     //reglas para las validaciones
     protected $reglas;
     protected $session;
@@ -20,6 +22,7 @@ class Habitacion extends BaseController
     {
         $this->habitacion = new HabitacionModel();
         $this->categoria = new CategoriaModel();
+        $this->detalleRol = new DetalleRolPermisoModel();
         $this->session = Session();
 
         //validaciones
@@ -39,12 +42,35 @@ class Habitacion extends BaseController
         ];
     }
 
+    public function getSinPermiso()
+    {
+        echo view('templates/header');
+        echo view('gestionarRol/sinpermiso');
+        echo view('templates/footer');
+    }
+
+    public function verficarPermiso($permiso, $id_submodulo)
+    {
+        $permiso  = $this->detalleRol->verificarPermiso($this->session->id_rol, $permiso, $id_submodulo);
+        return $permiso;
+    }
+
     //metodo principal, mostrar habitacioness
     public function getIndex()
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Habitaciones', 5)) {
+            return $this->getSinPermiso();
+        }
+
+        $botonesClass = [
+            'botonAgregar' => $this->verficarPermiso('Agregar', 5) == false ? 'visually-hidden-focusable' : '',
+            'botonEliminados' => $this->verficarPermiso('Eliminados', 5) == false ? 'visually-hidden-focusable' : '',
+            'botonEditar' => $this->verficarPermiso('Editar', 5) == false ? 'disabled-link' : 'btn btn-warning btn-sm',
+            'botonEliminar' => $this->verficarPermiso('Eliminar', 5) == false ? 'disabled-link' : 'btn btn-danger btn-sm',
+        ];
         $habitacionConsulta = $this->habitacion->mostrar();
         $data = ['titulo' => 'Habitaciones', 'habitaciones' => $habitacionConsulta];
         echo view('templates/header');
@@ -52,12 +78,14 @@ class Habitacion extends BaseController
         echo view('templates/footer');
     }
 
-
     //muestra la vista para insertar una habitacion 
     public function getCrear()
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Agregar', 5)  ||  !$this->verficarPermiso('Habitaciones', 5)) {
+            return $this->getSinPermiso();
         }
         //consulta para traer las categorias disponibles
         $categorias = $this->categoria->mostrar();
@@ -75,6 +103,9 @@ class Habitacion extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Agregar', 5)  ||  !$this->verficarPermiso('Habitaciones', 5)) {
+            return $this->getSinPermiso();
         }
         //si se envia el método post y las valiciones son correctas
         if (
@@ -99,6 +130,9 @@ class Habitacion extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Editar', 5)  ||  !$this->verficarPermiso('Habitaciones', 5)) {
+            return $this->getSinPermiso();
+        }
         $habitacion = $this->habitacion->mostrarId($nro_habitacion);
         $categorias = $this->categoria->mostrar();
         $data = [
@@ -117,6 +151,9 @@ class Habitacion extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Editar', 5)  ||  !$this->verficarPermiso('Habitaciones', 5)) {
+            return $this->getSinPermiso();
         }
         //para la validación
         if (
@@ -141,6 +178,9 @@ class Habitacion extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Eliminados', 5)  ||  !$this->verficarPermiso('Habitaciones', 5)) {
+            return $this->getSinPermiso();
+        }
         $habitaciones = $this->habitacion->mostrarEliminados();
         $data = [
             'titulo' => 'Habitaciones eliminadas',
@@ -156,6 +196,9 @@ class Habitacion extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Eliminar', 5)  ||  !$this->verficarPermiso('Habitaciones', 5)) {
+            return $this->getSinPermiso();
         }
         $resultado = $this->habitacion->eliminar($nro_habitacion);
         if ($resultado) {
@@ -179,6 +222,9 @@ class Habitacion extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Eliminados', 5)  ||  !$this->verficarPermiso('Habitaciones', 5)) {
+            return $this->getSinPermiso();
         }
         $resultado = $this->habitacion->restaurar($nro_habitacion);
         if ($resultado) {

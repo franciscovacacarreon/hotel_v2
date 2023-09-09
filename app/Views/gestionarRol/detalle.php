@@ -6,6 +6,11 @@ $session = session();
   <main>
     <div class="container-fluid px-4">
       <h4 class="mt-4"><?= $titulo ?></h4>
+      <div class="row mb-2">
+              <div class="col">
+                <input id="check-todo" class="form-check-input" type="checkbox"/> <label class="form-check-label">Seleccionar todo</label>
+              </div>
+            </div>
 
       <form id="form-permiso" name="form-permiso" action="<?= base_url() . 'rol/guardaPermiso' ?>" method="POST">
 
@@ -15,7 +20,7 @@ $session = session();
           <?php foreach ($modulos as $modulo) {?>
 
             <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3">
-              <div class="card mb-3">
+              <div class="card mb-3 card-equal-height">
                 <div class="card-header text-center">
                   <?=$modulo['nombre']?>
                 </div>
@@ -32,7 +37,7 @@ $session = session();
                     ?>
 
                             <div class="form-check form-switch">
-                              <input class="form-check-input" type="checkbox" value="<?= $permiso['id_permiso'] ?>" name="permisos[]" <?php if (isset($asignado[$permiso['id_permiso']])) { echo 'checked';}?>>
+                              <input class="form-check-input checkbox-permiso" type="checkbox" value="<?= $permiso['id_permiso'] ?>" name="permisos[]" <?php if (isset($asignado[$permiso['id_permiso']])) { echo 'checked';}?>>
                               <label class="form-check-label"><?= $permiso['nombre'] ?></label>
                             </div>
 
@@ -53,3 +58,15 @@ $session = session();
 
     </div>
   </main>
+
+  <script>
+    const checkTodo = document.getElementById("check-todo");
+    const checkboxPermisos = document.querySelectorAll('.checkbox-permiso');
+    let check = true;
+    checkTodo.addEventListener("click", (e) => {
+      checkboxPermisos.forEach(checkbox => {
+          checkbox.checked = check;
+        });
+        check = !check;
+    });
+  </script>

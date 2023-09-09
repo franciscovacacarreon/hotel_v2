@@ -191,7 +191,7 @@ $user_session = session();
                                     <a class="nav-link" href="<?php echo base_url(); ?>usuario">Usuarios</a>
                                     <a class="nav-link" href="<?php echo base_url(); ?>rol">Roles</a>
                                     <a class="nav-link" href="<?php echo base_url(); ?>permiso">Permisos</a>
-                                    <a class="nav-link" href="<?php echo base_url(); ?>submodulo">Módulos y Submodulos</a>
+                                    <a class="nav-link" href="<?php echo base_url(); ?>submodulo">Módulos y Submódulos</a>
                                 </nav>
                             </div>
                     </div>

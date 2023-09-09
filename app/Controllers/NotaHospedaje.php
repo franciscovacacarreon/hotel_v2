@@ -92,6 +92,9 @@ class NotaHospedaje extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Nuevo Hospedaje', 2)) {
+            return $this->getSinPermiso();
+        }
         $clientes = $this->cliente->mostrar();
         $habitaciones = $this->habitacion->mostrarHabitacionesDisponibles();
         //$reservas = $this->reserva->mostrar();
@@ -101,13 +104,9 @@ class NotaHospedaje extends BaseController
             'habitaciones' => $habitaciones,
             'validation' => $this->validator
         ];
-        if (!$this->verficarPermiso('Nuevo Hospedaje', 2)) {
-            $this->getSinPermiso();
-        } else {
-            echo view('templates/header');
-            echo view('gestionarNotaHospedaje/crearNotaHospedaje', $data);
-            echo view('templates/footer');
-        }
+        echo view('templates/header');
+        echo view('gestionarNotaHospedaje/crearNotaHospedaje', $data);
+        echo view('templates/footer');
     }
 
     //guardar el hospedaje en la nota hospedaje 
@@ -116,7 +115,9 @@ class NotaHospedaje extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-
+        if (!$this->verficarPermiso('Nuevo Hospedaje', 2)) {
+            return $this->getSinPermiso();
+        }
         if (
             $this->request->getMethod() == "post"
             &&  $this->validate($this->reglas)
@@ -281,6 +282,9 @@ class NotaHospedaje extends BaseController
 
     public function getFinalizarHospedaje($id_notaHospedaje)
     {
+        if (!$this->verficarPermiso('Hospedaje Finalizar', 2)  ||  !$this->verficarPermiso('Hospedaje', 2)) {
+            return $this->getSinPermiso();
+        }
         $this->notaHospedaje->finalizarHospedaje($id_notaHospedaje, 'Disponible');
         return redirect()->to(base_url() . 'habitacion');
     }

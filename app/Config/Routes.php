@@ -231,6 +231,9 @@ $routes->get($base.'/temporalReserva/eliminar/(:num)/(:alphanum)', 'TemporalRese
 
 //-------------------------------------Recepcion----------------------------------------//
 $routes->get($base.'/recepcion', 'Recepcion::getIndex');
+//finalizar hospedaje
+$routes->get($base.'/recepcion/finalizarHospedaje/(:num)', 'Recepcion::getFinalizarHospedaje/$1'); 
+
 
 //-------------------------------------Roles----------------------------------------//
 //Crear

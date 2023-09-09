@@ -82,15 +82,16 @@ class Servicio extends BaseController
             $botonesClass = [
                 'botonAgregar' => $this->verficarPermiso('Agregar', 3) == false ? 'visually-hidden-focusable' : '',
                 'botonEliminados' => $this->verficarPermiso('Eliminados', 3) == false ? 'visually-hidden-focusable' : '',
-                'botonEditar' => $this->verficarPermiso('Editar', 3) == false ? 'disabled-link' : '',
-                'botonEliminar' => $this->verficarPermiso('Eliminar', 3) == false ? 'visually-hidden' : '',
+                'botonEditar' => $this->verficarPermiso('Editar', 3) == false ? 'disabled-link' : 'btn btn-warning btn-sm',
+                'botonEliminar' => $this->verficarPermiso('Eliminar', 3) == false ? 'disabled-link' : 'btn btn-danger btn-sm',
             ];
-            
+
             $servicioConsulta = $this->servicio->mostrar();
-            $data = ['titulo' => 'Servicios', 
-                     'servicios' => $servicioConsulta,
-                     'botonesClass' => $botonesClass,
-                    ];
+            $data = [
+                'titulo' => 'Servicios',
+                'servicios' => $servicioConsulta,
+                'botonesClass' => $botonesClass,
+            ];
             echo view('templates/header');
             echo view('gestionarServicio/mostrarServicio', $data);
             echo view('templates/footer');
@@ -103,6 +104,9 @@ class Servicio extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Agregar', 3)  ||  !$this->verficarPermiso('servicios', 3)) {
+            return $this->getSinPermiso();
         }
         //consulta para traer los tipoServicios disponibles
         $tipoServicios = $this->tipoServicio->mostrar();
@@ -120,6 +124,9 @@ class Servicio extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Agregar', 3)  ||  !$this->verficarPermiso('servicios', 3)) {
+            return $this->getSinPermiso();
         }
         //si se envia el método post y las valiciones son correctas
         if (
@@ -145,6 +152,9 @@ class Servicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Editar', 3)  ||  !$this->verficarPermiso('servicios', 3)) {
+            return $this->getSinPermiso();
+        }
         $servicio = $this->servicio->mostrarId($id_servicio);
         $tipoServicios = $this->tipoServicio->mostrar();
         $data = [
@@ -163,6 +173,9 @@ class Servicio extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Editar', 3)  ||  !$this->verficarPermiso('servicios', 3)) {
+            return $this->getSinPermiso();
         }
         //para la validación
         if (
@@ -187,6 +200,9 @@ class Servicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Eliminados', 3)  ||  !$this->verficarPermiso('servicios', 3)) {
+            return $this->getSinPermiso();
+        }
         $servicios = $this->servicio->mostrarEliminados();
         $data = [
             'titulo' => 'Habitaciones eliminadas',
@@ -203,11 +219,14 @@ class Servicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Eliminar', 3)  ||  !$this->verficarPermiso('servicios', 3)) {
+            return $this->getSinPermiso();
+        }
         $resultado = $this->servicio->eliminar($id_servicio);
         if (!$resultado) {
             $servicioConsulta = $this->servicio->mostrar();
             $error = 'El servicio tiene registros asociados';
-            $data = ['titulo' => 'Servicios', 'error' =>$error, 'servicios' => $servicioConsulta];
+            $data = ['titulo' => 'Servicios', 'error' => $error, 'servicios' => $servicioConsulta];
             echo view('templates/header');
             echo view('gestionarServicio/mostrarServicio', $data);
             echo view('templates/footer');
@@ -221,6 +240,9 @@ class Servicio extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Eliminados', 3)  ||  !$this->verficarPermiso('servicios', 3)) {
+            return $this->getSinPermiso();
         }
         $resultado = $this->servicio->restaurar($id_servicio);
         if ($resultado) {
@@ -237,7 +259,7 @@ class Servicio extends BaseController
             return redirect()->to(base_url());
         }
         $datos = $this->servicio->buscarPorId($id_servicio);
-
+        
         $resultado['existe'] = false;
         $resultado['datos'] = '';
         $resultado['error'] = '';
@@ -253,5 +275,4 @@ class Servicio extends BaseController
         //para que trabaje el ajax correctamente, se convierte a json
         echo json_encode($resultado);
     }
-
 }

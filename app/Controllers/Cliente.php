@@ -4,11 +4,13 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 use App\Models\ClienteModel;
+use App\Models\DetalleRolPermisoModel;
 
 class Cliente extends BaseController
 {
     //tabla de la base de datos
     protected $cliente;
+    protected $detalleRol;
     //reglas para las validaciones
     protected $reglas;
     protected $session;
@@ -16,6 +18,7 @@ class Cliente extends BaseController
     public function __construct()
     {
         $this->cliente = new ClienteModel();
+        $this->detalleRol = new DetalleRolPermisoModel();
         $this->session = Session();
 
         helper(['form']); // para poder usar la función set_value en la vista
@@ -67,14 +70,38 @@ class Cliente extends BaseController
         ];
     }
 
+    //validar permisos
+    public function getSinPermiso()
+    {
+        echo view('templates/header');
+        echo view('gestionarRol/sinpermiso');
+        echo view('templates/footer');
+    }
+
+    public function verficarPermiso($permiso, $id_submodulo)
+    {
+        $permiso  = $this->detalleRol->verificarPermiso($this->session->id_rol, $permiso, $id_submodulo);
+        return $permiso;
+    }
+
     //metodo principal, mostrar clientes
     public function getIndex()
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Clientes', 7)) {
+            return $this->getSinPermiso();
+        }
+
+        $botonesClass = [
+            'botonAgregar' => $this->verficarPermiso('Agregar', 7) == false ? 'visually-hidden-focusable' : '',
+            'botonEliminados' => $this->verficarPermiso('Eliminados', 7) == false ? 'visually-hidden-focusable' : '',
+            'botonEditar' => $this->verficarPermiso('Editar', 7) == false ? 'disabled-link' : 'btn btn-warning btn-sm',
+            'botonEliminar' => $this->verficarPermiso('Eliminar', 7) == false ? 'disabled-link' : 'btn btn-danger btn-sm',
+        ];
         $clienteConsulta = $this->cliente->mostrar();
-        $data = ['titulo' => 'Clientes', 'clientes' => $clienteConsulta];
+        $data = ['titulo' => 'Clientes', 'clientes' => $clienteConsulta, 'botonesClass' => $botonesClass];
         echo view('templates/header');
         echo view('gestionarCliente/mostrarCliente', $data);
         echo view('templates/footer');
@@ -87,6 +114,9 @@ class Cliente extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Agregar', 7)  ||  !$this->verficarPermiso('Clientes', 7)) {
+            return $this->getSinPermiso();
+        }
         $data = ['titulo' => 'Crear Cliente', 'validation' => $this->validator];
         echo view('templates/header');
         echo view('gestionarCliente/crearCliente', $data);
@@ -97,6 +127,9 @@ class Cliente extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Agregar', 7)  ||  !$this->verficarPermiso('Clientes', 7)) {
+            return $this->getSinPermiso();
         }
         //si se envia el método post y las valiciones son correctas
         if (
@@ -125,6 +158,9 @@ class Cliente extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Editar', 7)  ||  !$this->verficarPermiso('Clientes', 7)) {
+            return $this->getSinPermiso();
+        }
         $clientes = $this->cliente->mostrarId($id_cliente);
         $data = [
             'titulo' => 'Editar Cliente',
@@ -141,6 +177,9 @@ class Cliente extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Editar', 7)  ||  !$this->verficarPermiso('Clientes', 7)) {
+            return $this->getSinPermiso();
         }
         //para la validación
         if (
@@ -171,6 +210,9 @@ class Cliente extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Eliminados', 7)  ||  !$this->verficarPermiso('Clientes', 7)) {
+            return $this->getSinPermiso();
+        }
         $clientes = $this->cliente->mostrarEliminados();
         $data = [
             'titulo' => 'Clientes eliminados',
@@ -187,7 +229,9 @@ class Cliente extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        //mejorar con un if
+        if (!$this->verficarPermiso('Eliminar', 7)  ||  !$this->verficarPermiso('Clientes', 7)) {
+            return $this->getSinPermiso();
+        }
         $resultado = $this->cliente->eliminar($id_cliente);
 
         if (!$resultado) {
@@ -206,6 +250,9 @@ class Cliente extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Eliminados', 7)  ||  !$this->verficarPermiso('Clientes', 7)) {
+            return $this->getSinPermiso();
         }
         $resultado = $this->cliente->restaurar($id_cliente);
         if ($resultado) {

@@ -65,7 +65,7 @@
                             <p class="card-text">Nro. Habitacion: ${data.nro_habitacion}</p>
                             <p class="card-text">Cliente: ${data.nombre_cliente}</p>
                             <p class="card-text">ID hospedaje: ${data.id_notaHospedaje}</p>
-                            <a href="<?php echo base_url() . 'notaHospedaje/finalizarHospedaje/'; ?>${data.id_notaHospedaje}" class="btn btn-primary ${botonFinalizar}">
+                            <a href="<?php echo base_url() . 'recepcion/finalizarHospedaje/'; ?>${data.id_notaHospedaje}" class="btn btn-primary ${botonFinalizar}">
                                 <i class="fa-solid fa-calendar"></i></i> Finalizar
                             </a>
                         </div>

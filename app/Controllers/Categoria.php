@@ -3,9 +3,8 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
-
-
 use App\Models\CategoriaModel;
+use App\Models\DetalleRolPermisoModel;
 
 
 class Categoria extends BaseController
@@ -13,6 +12,7 @@ class Categoria extends BaseController
 
     //tabla de la base de datos
     protected $categoria;
+    protected $detalleRol;
     //reglas para las validaciones
     protected $reglas;
     protected $session;
@@ -20,6 +20,7 @@ class Categoria extends BaseController
     public function __construct()
     {
         $this->categoria = new CategoriaModel();
+        $this->detalleRol = new DetalleRolPermisoModel();
         $this->session = Session();
 
         //validaciones
@@ -45,6 +46,20 @@ class Categoria extends BaseController
         ];
     }
 
+    //validar permisos
+    public function getSinPermiso()
+    {
+        echo view('templates/header');
+        echo view('gestionarRol/sinpermiso');
+        echo view('templates/footer');
+    }
+
+    public function verficarPermiso($permiso, $id_submodulo)
+    {
+        $permiso  = $this->detalleRol->verificarPermiso($this->session->id_rol, $permiso, $id_submodulo);
+        return $permiso;
+    }
+
     //metodo principal, mostrar categorias
     public function getIndex()
     {
@@ -52,8 +67,18 @@ class Categoria extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Categorias', 6)) {
+            return $this->getSinPermiso();
+        }
+
+        $botonesClass = [
+            'botonAgregar' => $this->verficarPermiso('Agregar', 6) == false ? 'visually-hidden-focusable' : '',
+            'botonEliminados' => $this->verficarPermiso('Eliminados', 6) == false ? 'visually-hidden-focusable' : '',
+            'botonEditar' => $this->verficarPermiso('Editar', 6) == false ? 'disabled-link' : 'btn btn-warning btn-sm',
+            'botonEliminar' => $this->verficarPermiso('Eliminar', 6) == false ? 'disabled-link' : 'btn btn-danger btn-sm',
+        ];
         $categoriaConsulta = $this->categoria->mostrar();
-        $data = ['titulo' => 'Categoria', 'datos' => $categoriaConsulta];
+        $data = ['titulo' => 'Categoria', 'datos' => $categoriaConsulta, 'botonesClass' => $botonesClass];
         echo view('templates/header');
         echo view('gestionarCategoria/mostrarCategoria', $data);
         echo view('templates/footer');
@@ -65,6 +90,9 @@ class Categoria extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Agregar', 6)  ||  !$this->verficarPermiso('Categorias', 6)) {
+            return $this->getSinPermiso();
+        }
         $data = ['titulo' => 'Crear Categoria', 'validation' => $this->validator];
         echo view('templates/header');
         echo view('gestionarCategoria/crearCategoria', $data);
@@ -75,6 +103,9 @@ class Categoria extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Agregar', 6)  ||  !$this->verficarPermiso('Categorias', 6)) {
+            return $this->getSinPermiso();
         }
         //si se envia el método post y las valiciones son correctas
         if (
@@ -100,6 +131,9 @@ class Categoria extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Editar', 6)  ||  !$this->verficarPermiso('Categorias', 6)) {
+            return $this->getSinPermiso();
+        }
         $categorias = $this->categoria->mostrarId($id);
         $data = [
             'titulo' => 'Editar Categoria',
@@ -116,6 +150,9 @@ class Categoria extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Editar', 6)  ||  !$this->verficarPermiso('Categorias', 6)) {
+            return $this->getSinPermiso();
         }
         //para la validación
         if (
@@ -141,6 +178,9 @@ class Categoria extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Eliminados', 6)  ||  !$this->verficarPermiso('Categorias', 6)) {
+            return $this->getSinPermiso();
+        }
         $categorias = $this->categoria->mostrarEliminados();
         $data = [
             'titulo' => 'Categorias eliminadas',
@@ -156,6 +196,9 @@ class Categoria extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Eliminar', 6)  ||  !$this->verficarPermiso('Categorias', 6)) {
+            return $this->getSinPermiso();
         }
         //mejorar con un if
         $resultado = $this->categoria->eliminar($id);
@@ -179,6 +222,9 @@ class Categoria extends BaseController
     {
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Eliminados', 6)  ||  !$this->verficarPermiso('Categorias', 6)) {
+            return $this->getSinPermiso();
         }
         $resultado = $this->categoria->restaurar($id);
         if ($resultado) {

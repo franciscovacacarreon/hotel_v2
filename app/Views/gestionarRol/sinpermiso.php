@@ -5,7 +5,7 @@
             <i class="fa-solid fa-lock"></i> No tiene acceso a este módulo
             </h2>
             <div>
-                <label for="" class="form-label fw-bold"><i class="text-danger">*</i>
+                <label   class="form-label fw-bold"><i class="text-danger">*</i>
                     Contacte con el administrador del sistema.
                 </label>
             </div>

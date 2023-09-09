@@ -115,6 +115,9 @@ class NotaServicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
+        if (!$this->verficarPermiso('Nueva nota servicio', 3)) {
+            return $this->getSinPermiso();
+        }
         if ($this->validate($this->reglas)) {
 
             $id_notaServicio = $this->request->getPost('id_notaServicio'); //folio

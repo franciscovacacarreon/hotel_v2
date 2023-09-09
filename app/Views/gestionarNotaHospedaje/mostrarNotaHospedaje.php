@@ -1,10 +1,4 @@
-<style>
-  .disabled-link {
-    color: gray;
-    pointer-events: none;
-    /* Evita que el enlace sea clickeable */
-  }
-</style>
+
 
 <div id="layoutSidenav_content">
   <main>

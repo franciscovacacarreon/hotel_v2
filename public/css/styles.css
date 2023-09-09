@@ -79,6 +79,16 @@
   --bs-highlight-bg: #fff3cd;
 }
 
+/* clase personalizada */
+.disabled-link {
+  
+  text-decoration: line-through; /* Agregar una línea tachada */
+  color: gray; /* Cambiar el color del texto a gris */
+  cursor: not-allowed; /* Cambiar el cursor del mouse a "no permitido" */
+  pointer-events: none;
+    /* Evita que el enlace sea clickeable */
+  }
+
 *,
 *::before,
 *::after {

@@ -8,6 +8,7 @@ use App\Controllers\BaseController;
 use App\Models\PermisoModel;
 use App\Models\SubmoduloModel;
 use App\Models\TipoPermisoModel;
+use App\Models\DetalleRolPermisoModel;
 
 
 class Permiso extends BaseController
@@ -17,6 +18,7 @@ class Permiso extends BaseController
     protected $permiso;
     protected $submodulo;
     protected $tipoPermiso;
+    protected $detalleRol;
     //reglas para las validaciones
     protected $reglas;
     protected $session;
@@ -26,6 +28,7 @@ class Permiso extends BaseController
         $this->permiso = new PermisoModel();
         $this->submodulo = new SubmoduloModel();
         $this->tipoPermiso = new TipoPermisoModel();
+        $this->detalleRol = new DetalleRolPermisoModel();
         $this->session = Session();
 
         //validaciones
@@ -51,12 +54,28 @@ class Permiso extends BaseController
         ];
     }
 
+    public function getSinPermiso()
+    {
+        echo view('templates/header');
+        echo view('gestionarRol/sinpermiso');
+        echo view('templates/footer');
+    }
+
+    public function verficarPermiso($permiso, $id_submodulo)
+    {
+        $permiso  = $this->detalleRol->verificarPermiso($this->session->id_rol, $permiso, $id_submodulo);
+        return $permiso;
+    }
+
     //metodo principal, mostrar permisos
     public function getIndex()
     {
         //verificar si la sesion sigue activa
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
+        }
+        if (!$this->verficarPermiso('Permisos', 13)) {
+            return $this->getSinPermiso();
         }
         $permisoConsulta = $this->permiso->mostrar();
         $submodulos = $this->submodulo->mostrar();
