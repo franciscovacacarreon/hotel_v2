@@ -46,9 +46,7 @@ $session = session();
             <th>Nro</th>
             <th>Nombre</th>
             <th>Descripción</th>
-            <th width="1%"></th>
-            <th width="1%"></th>
-            <th width="1%"></th>
+            <th width="10%">Acción</th>
           </tr>
         </thead>
         <tbody>
@@ -57,21 +55,19 @@ $session = session();
               <td><?php echo $dato['id_rol'] ?></td>
               <td><?php echo $dato['nombre'] ?></td>
               <td><?php echo $dato['descripcion'] ?></td>
-                <td>
-                  <a href="<?=base_url() . 'rol/detalle/' . $dato['id_rol']?>" class="btn btn-success btn-sm">
-                    <i class="fa-solid fa-edit"></i> Asignar
+              <td>
+                  <a href="<?=base_url() . 'rol/detalle/' . $dato['id_rol']?>" class="btn btn-success btn-sm" title="Asignar permisos">
+                    <i class="fa-solid fa-edit"></i>
                   </a>
-                </td>
-                <td>
+
                   <!-- botón para editar el registro -->
-                  <button type="button" onclick="editarRol(<?=$dato['id_rol']?>)" class="btn btn-warning btn-sm">
-                    <i class="fa fa-pencil"></i> Editar
+                  <button type="button" onclick="editarRol(<?=$dato['id_rol']?>)" class="btn btn-warning btn-sm" title="Editar registro">
+                    <i class="fa fa-pencil"></i>
                   </button>
-                </td>
-                <td>
+
                   <!-- botón para eliminar el registro -->
-                  <a href="#" data-href="<?php echo base_url() . 'rol/eliminar/' . $dato['id_rol']; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" class="btn btn-danger btn-sm">
-                    <i class="fa fa-trash"></i> Eliminar
+                  <a href="#" data-href="<?php echo base_url() . 'rol/eliminar/' . $dato['id_rol']; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" class="btn btn-danger btn-sm" title="Eliminar Registro">
+                    <i class="fa fa-trash"></i>
                   </a>
                 </td>
             </tr>
