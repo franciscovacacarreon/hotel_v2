@@ -8,3 +8,4 @@ phpunit.xml.dist
 preload.php
 README.md
 spark
+app/config/Database.php
