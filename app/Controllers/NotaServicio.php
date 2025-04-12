@@ -16,26 +16,26 @@ use PDF;
 class NotaServicio extends BaseController
 {
     //tabla de la base de datos
-    protected $notaServicio;
+    protected $notaservicio;
     protected $cliente;
     protected $temporal_servicio;
-    protected $detalleServicio;
+    protected $detalleservicio;
     protected $reglas; //  TERMINAR VALIDACIONES
     protected $configuracion;
     protected $servicio;
-    protected $notaHospedaje;
+    protected $notahospedaje;
     protected $session;
     protected $detalleRol;
 
     public function __construct()
     {
-        $this->notaServicio = new NotaServicioModel();
+        $this->notaservicio = new NotaServicioModel();
         $this->cliente = new ClienteModel();
         $this->temporal_servicio = new TemporalServicioModel();
-        $this->detalleServicio = new DetalleServicioModel();
+        $this->detalleservicio = new DetalleServicioModel();
         $this->configuracion = new ConfiguracionModel();
         $this->servicio = new ServicioModel();
-        $this->notaHospedaje = new NotaHospedajeModel();
+        $this->notahospedaje = new NotaHospedajeModel();
         $this->detalleRol = new DetalleRolPermisoModel();
         $this->session = Session();
         helper(['form']);
@@ -74,7 +74,7 @@ class NotaServicio extends BaseController
         if (!$this->verficarPermiso('Notas de servicio', 3)) {
             $this->getSinPermiso();
         } else {
-            $NotaServicioConsulta = $this->notaServicio->mostrar();
+            $NotaServicioConsulta = $this->notaservicio->mostrar();
             $data = ['titulo' => 'Nota de servicios', 'notaServicios' => $NotaServicioConsulta];
             echo view('templates/header');
             echo view('gestionarNotaServicio/mostrarNotaServicio', $data);
@@ -83,7 +83,7 @@ class NotaServicio extends BaseController
     }
 
 
-    //muestra la vista para crear una notaServicio 
+    //muestra la vista para crear una notaservicio 
     //(FALTA AÑADIR EL HOSPEDAJE)
     public function getCrear()
     {
@@ -95,7 +95,7 @@ class NotaServicio extends BaseController
         } else {
             $clientes = $this->cliente->mostrar();
             $servicios = $this->servicio->mostrar();
-            $hospedajes = $this->notaHospedaje->mostrar();
+            $hospedajes = $this->notahospedaje->mostrar();
             $data = [
                 'titulo' => 'Nueva nota de servicio',
                 'clientes' => $clientes,
@@ -128,14 +128,14 @@ class NotaServicio extends BaseController
             $session = session(); //para capturar el id_recepcionista
 
             //id de la nota servicio insertada recientemente, para insertar el detalle servicio
-            $resultadoId = $this->notaServicio->insertaNotaServicio($id_notaServicio, $total, $session->id_recepcionista, $id_cliente, $id_notaHospedaje);
+            $resultadoId = $this->notaservicio->insertaNotaServicio($id_notaServicio, $total, $session->id_recepcionista, $id_cliente, $id_notaHospedaje);
 
             //insertar los datos en el detalle servicio
             if ($resultadoId) {
                 $resultadoNotaServicio = $this->temporal_servicio->porIdNotaServicio($id_notaServicio);
 
                 foreach ($resultadoNotaServicio as $row) {
-                    $this->detalleServicio->crear(
+                    $this->detalleservicio->crear(
                         $resultadoId,
                         $row['id_servicio'],
                         $row['cantidad'],
@@ -148,7 +148,7 @@ class NotaServicio extends BaseController
             }
         }
         //redireccionar a la vista del pdf
-        return redirect()->to(base_url() . "notaServicio/muestraNotaServicioPdf/" . $resultadoId);
+        return redirect()->to(base_url() . "notaservicio/muestraNotaServicioPdf/" . $resultadoId);
     }
 
     //para mostrar la vista donde se genera el pdf
@@ -176,8 +176,8 @@ class NotaServicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $datosNotaServicio = $this->notaServicio->mostrarNotaServicioId($id_notaServicio);
-        $datosDetalleNotaServicio = $this->notaServicio->mostrarDetalleNotaServicio($id_notaServicio);
+        $datosNotaServicio = $this->notaservicio->mostrarNotaServicioId($id_notaServicio);
+        $datosDetalleNotaServicio = $this->notaservicio->mostrarDetalleNotaServicio($id_notaServicio);
         $datosHotel = $this->configuracion->mostrar();
 
         //creando el pdf

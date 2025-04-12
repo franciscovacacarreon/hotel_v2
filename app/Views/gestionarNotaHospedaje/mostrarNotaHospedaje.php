@@ -24,31 +24,31 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($notaHospedajes as $notaHospedaje) { ?>
+          <?php foreach ($notaHospedajes as $notahospedaje) { ?>
             <tr>
-              <td><?php echo $notaHospedaje['id_notaHospedaje'] ?></td>
-              <td><?php echo $notaHospedaje['monto_total'] ?></td>
-              <td><?php echo $notaHospedaje['nombre_cliente'] ?></td>
-              <td><?php echo $notaHospedaje['id_reserva'] ?></td>
-              <td><?php echo $notaHospedaje['fechaEntrada'] ?></td>
-              <td><?php echo $notaHospedaje['fechaSalida'] ?></td>
+              <td><?php echo $notahospedaje['id_notaHospedaje'] ?></td>
+              <td><?php echo $notahospedaje['monto_total'] ?></td>
+              <td><?php echo $notahospedaje['nombre_cliente'] ?></td>
+              <td><?php echo $notahospedaje['id_reserva'] ?></td>
+              <td><?php echo $notahospedaje['fechaEntrada'] ?></td>
+              <td><?php echo $notahospedaje['fechaSalida'] ?></td>
 
               <?php if ($botonDetalle) { ?>
                 <td>
                   <!-- botón para editar el registro -->
-                  <a href="<?php echo base_url() . 'notaHospedaje/muestraNotaHospedajePdf/' . $notaHospedaje['id_notaHospedaje']; ?>" class="btn btn-primary btn-">
+                  <a href="<?php echo base_url() . 'notahospedaje/muestraNotaHospedajePdf/' . $notahospedaje['id_notaHospedaje']; ?>" class="btn btn-primary btn-">
                     <i class="fa-sharp fa-light fa-file"></i> Detalle
                   </a>
                 </td>
               <?php } ?>
 
               <td>
-                <?php if ($notaHospedaje['estado_hospedaje'] === 'Finalizado') { ?>
+                <?php if ($notahospedaje['estado_hospedaje'] === 'Finalizado') { ?>
                   <label class="btn btn-success btn-sm" style="width: 100px;">
                     <i class="fa-solid fa-check"></i> Finalizado
                   </label>
                 <?php } else { ?>
-                  <a href="<?php echo base_url() . 'notaHospedaje/finalizarHospedaje/' . $notaHospedaje['id_notaHospedaje']; ?>" class="btn btn-warning btn-sm <?= $botonFinalizar ?>" style="width: 100px;">
+                  <a href="<?php echo base_url() . 'notahospedaje/finalizarHospedaje/' . $notahospedaje['id_notaHospedaje']; ?>" class="btn btn-warning btn-sm <?= $botonFinalizar ?>" style="width: 100px;">
                     <i class="fa-solid fa-calendar"></i> Finalizar
                   </a>
                 <?php } ?>

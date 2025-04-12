@@ -15,23 +15,23 @@ use PDF;
 class NotaHospedaje extends BaseController
 {
     //tabla de la base de datos
-    protected $notaHospedaje;
+    protected $notahospedaje;
     protected $cliente;
     protected $temporal_hospedaje;
-    protected $detalleHospedaje;
+    protected $detallehospedaje;
     protected $reglas; //  TERMINAR VALIDACIONES
     protected $configuracion;
     protected $habitacion;
     protected $detalleRol;
     protected $session;
-    //protected $notaHospedaje;
+    //protected $notahospedaje;
 
     public function __construct()
     {
-        $this->notaHospedaje = new NotaHospedajeModel();
+        $this->notahospedaje = new NotaHospedajeModel();
         $this->cliente = new ClienteModel();
         $this->temporal_hospedaje = new TemporalHospedajeModel();
-        $this->detalleHospedaje = new DetalleHospedajeModel();
+        $this->detallehospedaje = new DetalleHospedajeModel();
         $this->configuracion = new ConfiguracionModel();
         $this->habitacion = new HabitacionModel();
         $this->detalleRol = new DetalleRolPermisoModel();
@@ -78,7 +78,7 @@ class NotaHospedaje extends BaseController
         } else {
             $botonDetalle = $this->verficarPermiso('Hospedaje Detalle', 2);
             $botonFinalizar = $this->verficarPermiso('Hospedaje Finalizar', 2) == false ? 'disabled-link' : '';
-            $notaHospedajeConsulta = $this->notaHospedaje->mostrarConCliente();
+            $notaHospedajeConsulta = $this->notahospedaje->mostrarConCliente();
             $data = ['titulo' => 'Hospedajes', 'validation' => $this->validator, 'notaHospedajes' => $notaHospedajeConsulta, 'botonDetalle' => $botonDetalle, 'botonFinalizar' => $botonFinalizar];
             echo view('templates/header');
             echo view('gestionarNotaHospedaje/mostrarNotaHospedaje', $data);
@@ -136,7 +136,7 @@ class NotaHospedaje extends BaseController
             $session = session(); //para capturar el id_recepcionista
 
             //id de la nota hospedaje insertada recientemente, para insertar el detalle servicio
-            $resultdadoIdHospedaje = $this->notaHospedaje->insertarNotaHospedaje(
+            $resultdadoIdHospedaje = $this->notahospedaje->insertarNotaHospedaje(
                 $id_notaHospedaje,
                 $fechaEntrada,
                 $fechaSalida,
@@ -154,7 +154,7 @@ class NotaHospedaje extends BaseController
                 $resultNotaHospedaje = $this->temporal_hospedaje->porIdNotaHospedaje($id_notaHospedaje);
 
                 foreach ($resultNotaHospedaje as $row) {
-                    $this->detalleHospedaje->crear(
+                    $this->detallehospedaje->crear(
                         $resultdadoIdHospedaje,
                         $row['nro_habitacion'],
                         $row['cantidad_dias'],
@@ -169,9 +169,9 @@ class NotaHospedaje extends BaseController
                 //eliminar el hospedaje temporal
                 $this->temporal_hospedaje->eliminarNotaHospedaje($id_notaHospedaje);
             }
-            return redirect()->to(base_url() . "notaHospedaje/muestraNotaHospedajePdf/" . $resultdadoIdHospedaje);
+            return redirect()->to(base_url() . "notahospedaje/muestraNotaHospedajePdf/" . $resultdadoIdHospedaje);
         } else {
-            return redirect()->to(base_url() . "notaHospedaje/crear");
+            return redirect()->to(base_url() . "notahospedaje/crear");
         }
     }
 
@@ -194,8 +194,8 @@ class NotaHospedaje extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $datosNotaHospedaje = $this->notaHospedaje->mostrarNotaHospedajeId($id_notaHospedaje);
-        $datosDetalleNotaHospedaje = $this->detalleHospedaje->mostrarDetalleHospedaje($id_notaHospedaje);
+        $datosNotaHospedaje = $this->notahospedaje->mostrarNotaHospedajeId($id_notaHospedaje);
+        $datosDetalleNotaHospedaje = $this->detallehospedaje->mostrarDetalleHospedaje($id_notaHospedaje);
         $datosHotel = $this->configuracion->mostrar();
 
         //creando el pdf
@@ -285,7 +285,7 @@ class NotaHospedaje extends BaseController
         if (!$this->verficarPermiso('Hospedaje Finalizar', 2)  ||  !$this->verficarPermiso('Hospedaje', 2)) {
             return $this->getSinPermiso();
         }
-        $this->notaHospedaje->finalizarHospedaje($id_notaHospedaje, 'Disponible');
+        $this->notahospedaje->finalizarHospedaje($id_notaHospedaje, 'Disponible');
         return redirect()->to(base_url() . 'habitacion');
     }
 }

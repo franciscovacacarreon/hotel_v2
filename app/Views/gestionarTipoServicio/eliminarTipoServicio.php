@@ -5,7 +5,7 @@
       <div>
         <p>
           <!-- boton para regresar a las categorias -->
-          <a href="<?php echo base_url(); ?>tipoServicio" class="btn btn-info">Regresar a Tipo Servicio</a>
+          <a href="<?php echo base_url(); ?>tiposervicio" class="btn btn-info">Regresar a Tipo Servicio</a>
         </p>
       </div>
 
@@ -29,7 +29,7 @@
               <td><?php echo $dato['descripcion'] ?></td>
               <td>
                 <!-- boton para restaurar el registro -->
-                <a href="#" data-href="<?php echo base_url().'tipoServicio/restaurar/'.$dato['id_tipoServicio']; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-placement="top" title="Reingresar Registro">
+                <a href="#" data-href="<?php echo base_url().'tiposervicio/restaurar/'.$dato['id_tipoServicio']; ?>" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-placement="top" title="Reingresar Registro">
                   <i class="fas fa-arrow-alt-circle-up"></i>
                 </a>
               </td>

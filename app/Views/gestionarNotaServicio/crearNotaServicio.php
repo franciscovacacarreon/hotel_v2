@@ -12,7 +12,7 @@ $id_notaServicio = uniqid();
 
             </div>
 
-            <form method="POST" id="form-nota-servicio" name="form-nota-servicio" action="<?php echo base_url() ?>notaServicio/guarda" autocomplete="off">
+            <form method="POST" id="form-nota-servicio" name="form-nota-servicio" action="<?php echo base_url() ?>notaservicio/guarda" autocomplete="off">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-12 col-sm-4">
@@ -87,12 +87,12 @@ $id_notaServicio = uniqid();
                                 <option value="">Seleccionar hospedaje</option>
                                 <option value="0">Sin hospedaje</option>
 
-                                <?php foreach ($notaHospedajes as $notaHospedaje) {
+                                <?php foreach ($notaHospedajes as $notahospedaje) {
                                 ?>
 
-                                <option value="<?php echo $notaHospedaje['id_notaHospedaje']
+                                <option value="<?php echo $notahospedaje['id_notaHospedaje']
                                                 ?>">
-                                    <?php echo $notaHospedaje['id_notaHospedaje']
+                                    <?php echo $notahospedaje['id_notaHospedaje']
                                     ?>
                                 </option>
 
@@ -315,7 +315,7 @@ $id_notaServicio = uniqid();
                 //utilizando ajax
                 //primero va a la url, y hace todo lo que se le indica
                 $.ajax({
-                    url: '<?php echo base_url(); ?>temporalServicio/insertar/' + id_servicio + "/" + cantidad + "/" + id_notaServicio + "/" + id_cliente + "/" + id_notaHospedaje,
+                    url: '<?php echo base_url(); ?>temporalservicio/insertar/' + id_servicio + "/" + cantidad + "/" + id_notaServicio + "/" + id_cliente + "/" + id_notaHospedaje,
 
                     //una vez haya hecho todo, captura todo en resultado
                     success: function(resultado) {
@@ -347,7 +347,7 @@ $id_notaServicio = uniqid();
         function eliminarServicio(id_servicio, id_notaServicio) {
             //usando ajax
             $.ajax({
-                url: '<?php echo base_url(); ?>temporalServicio/eliminar/' + id_servicio + "/" + id_notaServicio,
+                url: '<?php echo base_url(); ?>temporalservicio/eliminar/' + id_servicio + "/" + id_notaServicio,
                 success: function(resultado) {
                     if (resultado == 0) {
                         //$(tagCodigo).val('');

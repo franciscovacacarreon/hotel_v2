@@ -10,7 +10,7 @@
                 </div>
             <?php } ?>
 
-            <form method="post" action="<?php echo base_url(); ?>tipoServicio/actualizar" autocomplete="off">
+            <form method="post" action="<?php echo base_url(); ?>tiposervicio/actualizar" autocomplete="off">
 
                 <input type="hidden" value="<?php echo $datos['id_tipoServicio'] ?>" name="id">
 
@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-                <a href="<?php echo base_url(); ?>tipoServicio" class="btn btn-primary my-3">Regresar</a>
+                <a href="<?php echo base_url(); ?>tiposervicio" class="btn btn-primary my-3">Regresar</a>
                 <button type="submit" class="btn btn-success my-3">Guardar</button>
             </form>
 

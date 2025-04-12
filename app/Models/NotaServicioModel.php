@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class NotaServicioModel extends Model
 {
 
-    protected $table      = 'notaServicio';
+    protected $table      = 'notaservicio';
     protected $primaryKey = 'id_notaServicio';
 
     //id autoIncrement
@@ -41,7 +41,7 @@ class NotaServicioModel extends Model
 
 
     //métodos 
-    //mostrar notaServicio
+    //mostrar notaservicio
     public function mostrar()
     {
         return $this->where('estado', 1)->findAll();

@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class NotaHospedajeModel extends Model
 {
 
-    protected $table      = 'notaHospedaje';
+    protected $table      = 'notahospedaje';
     protected $primaryKey = 'id_notaHospedaje';
 
     //id autoIncrement
@@ -49,7 +49,7 @@ class NotaHospedajeModel extends Model
 
 
     //métodos 
-    //mostrar notaServicio
+    //mostrar notaservicio
     public function mostrar()
     {
         return $this->where('estado', 1)->findAll();
@@ -57,11 +57,11 @@ class NotaHospedajeModel extends Model
 
     public function mostrarConCliente()
     {
-        $sql = "SELECT notaHospedaje.*, 
+        $sql = "SELECT notahospedaje.*, 
                 CONCAT(cliente.nombre, ' ', cliente.paterno) as nombre_cliente
-                FROM notaHospedaje, cliente
-                WHERE notaHospedaje.id_cliente = cliente.id_cliente
-                ORDER BY notaHospedaje.id_notaHospedaje";
+                FROM notahospedaje, cliente
+                WHERE notahospedaje.id_cliente = cliente.id_cliente
+                ORDER BY notahospedaje.id_notaHospedaje";
 
         $query = $this->db->query($sql);
         $datosHabitacionCategoria = $query->getResultArray(); //devolver el una fila
@@ -72,8 +72,8 @@ class NotaHospedajeModel extends Model
     public function mostrarNotaHospedaje($id_notaHospedaje)
     {
 
-        $this->select('notaHospedaje.*', 'CONCAT(cliente.nombre, " ", cliente.paterno) as nombre_cliente');
-        $this->join('cliente', 'cliente.id_cliente', '=', 'notaHospedaje.id_cliente');
+        $this->select('notahospedaje.*', 'CONCAT(cliente.nombre, " ", cliente.paterno) as nombre_cliente');
+        $this->join('cliente', 'cliente.id_cliente', '=', 'notahospedaje.id_cliente');
         $datos = $this->where('id_notaHospedaje', $id_notaHospedaje)->first();
         return $datos;
     }
@@ -81,11 +81,11 @@ class NotaHospedajeModel extends Model
     //mostrar por id
     public function mostrarNotaHospedajeId($id_notaHospedaje)
     {
-        $sql = "SELECT notaHospedaje.*, 
+        $sql = "SELECT notahospedaje.*, 
                 CONCAT(cliente.nombre, ' ', cliente.paterno) as nombre_cliente
-                FROM notaHospedaje, cliente
-                WHERE notaHospedaje.id_cliente = cliente.id_cliente
-                AND notaHospedaje.id_notaHospedaje = $id_notaHospedaje";
+                FROM notahospedaje, cliente
+                WHERE notahospedaje.id_cliente = cliente.id_cliente
+                AND notahospedaje.id_notaHospedaje = $id_notaHospedaje";
 
         $query = $this->db->query($sql);
         $datosHabitacionCategoria = $query->getRowArray(); //devolver el una fila
@@ -186,7 +186,7 @@ class NotaHospedajeModel extends Model
                 JOIN detallehospedaje ON detallehospedaje.nro_habitacion = habitacion.nro_habitacion
                 JOIN notahospedaje ON detallehospedaje.id_notaHospedaje = notahospedaje.id_notaHospedaje
                 SET habitacion.estado_habitacion = '$estado_habitacion',
-                estado_hospedaje = 'Finalizado', notaHospedaje.fechaRealSalida = '$fechaActual'
+                estado_hospedaje = 'Finalizado', notahospedaje.fechaRealSalida = '$fechaActual'
                 WHERE notahospedaje.id_notaHospedaje = $id_notaHospedaje;";
 
         $query = $this->db->query($sql);

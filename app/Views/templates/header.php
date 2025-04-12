@@ -93,8 +93,8 @@ $user_session = session();
                         <div class="collapse" id="subHospedaje" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="<?php echo base_url(); ?>recepcion">Recepción</a>
-                                <a class="nav-link" href="<?php echo base_url(); ?>notaHospedaje">Hospedaje</a>
-                                <a class="nav-link" href="<?php echo base_url(); ?>notaHospedaje/crear">Nuevo Hospedaje</a>
+                                <a class="nav-link" href="<?php echo base_url(); ?>notahospedaje">Hospedaje</a>
+                                <a class="nav-link" href="<?php echo base_url(); ?>notahospedaje/crear">Nuevo Hospedaje</a>
                             </nav>
                         </div>
 
@@ -106,10 +106,10 @@ $user_session = session();
                         </a>
                         <div class="collapse" id="subServicio" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="<?php echo base_url(); ?>notaServicio">Notas de servicio</a>
-                                <a class="nav-link" href="<?php echo base_url(); ?>notaServicio/crear">Nueva nota servicio</a>
+                                <a class="nav-link" href="<?php echo base_url(); ?>notaservicio">Notas de servicio</a>
+                                <a class="nav-link" href="<?php echo base_url(); ?>notaservicio/crear">Nueva nota servicio</a>
                                 <a class="nav-link" href="<?php echo base_url(); ?>servicio">Servicios</a>
-                                <a class="nav-link" href="<?php echo base_url(); ?>tipoServicio">Tipo de servicios</a>
+                                <a class="nav-link" href="<?php echo base_url(); ?>tiposervicio">Tipo de servicios</a>
                             </nav>
                         </div>
 

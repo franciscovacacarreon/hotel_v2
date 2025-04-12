@@ -123,9 +123,9 @@ $session = session();
               <div class="col-4">
                 <label class="form-label" for="id_tipoPermiso">tipo</label>
                 <select class="form-control" name="id_tipoPermiso" id="id_tipoPermiso">
-                  <?php foreach ($tipoPermisos as $tipoPermiso) { ?>
+                  <?php foreach ($tipoPermisos as $tipopermiso) { ?>
 
-                    <option value="<?= $tipoPermiso['id_tipoPermiso'] ?>"><?= $tipoPermiso['nombre'] ?></option>
+                    <option value="<?= $tipopermiso['id_tipoPermiso'] ?>"><?= $tipopermiso['nombre'] ?></option>
 
                   <?php } ?>
                 </select>

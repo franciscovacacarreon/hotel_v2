@@ -211,10 +211,10 @@ class HabitacionModel extends Model
 
     //sin usar
     public function cambiarEstadoHabitacionPorHospedaje($id_notaHospedaje){  
-        $this->join('detalleHospedaje', 'detalleHospedaje.nro_habitacion = habitacion.nro_habitacion');
-        $this->join('notaHospedaje', 'detalleHospedaje.id_notaHospedaje = notaHospedaje.id_notaHospedaje');
+        $this->join('detallehospedaje', 'detallehospedaje.nro_habitacion = habitacion.nro_habitacion');
+        $this->join('notahospedaje', 'detallehospedaje.id_notaHospedaje = notahospedaje.id_notaHospedaje');
         $this->set('habitacion.estado_habitacion', 'Ocupada');
-        $this->where('notaHospedaje.id_notaHospedaje', $id_notaHospedaje);
+        $this->where('notahospedaje.id_notaHospedaje', $id_notaHospedaje);
         $this->update();
     }
 
@@ -260,8 +260,8 @@ class HabitacionModel extends Model
 
     public function cantidadHospedajeDia(){
         $sql = "SELECT COUNT(id_notaHospedaje) as cantidad_hospedaje
-                FROM notaHospedaje
-                WHERE notaHospedaje.id_notaHospedaje = '" . date("Y-m-d") . "'";
+                FROM notahospedaje
+                WHERE notahospedaje.id_notaHospedaje = '" . date("Y-m-d") . "'";
 
         $query = $this->db->query($sql);
         $datos = $query->getRowArray(); //devolver el una fila
@@ -270,10 +270,10 @@ class HabitacionModel extends Model
 
     public function cantidadServicioDia(){
         $sql = "SELECT COUNT(servicio.id_servicio) as cantidad_servicio
-                FROM notaServicio, servicio, detalleServicio
-                WHERE detalleServicio.id_notaServicio = notaServicio.id_notaServicio
-                AND detalleServicio.id_servicio = servicio.id_servicio
-                AND notaServicio.id_notaServicio = '" . date("Y-m-d") . "'";
+                FROM notaservicio, servicio, detalleservicio
+                WHERE detalleservicio.id_notaServicio = notaservicio.id_notaServicio
+                AND detalleservicio.id_servicio = servicio.id_servicio
+                AND notaservicio.id_notaServicio = '" . date("Y-m-d") . "'";
 
         $query = $this->db->query($sql);
         $datos = $query->getRowArray(); //devolver el una fila

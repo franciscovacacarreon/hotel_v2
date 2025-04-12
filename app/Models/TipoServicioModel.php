@@ -7,7 +7,7 @@
     class TipoServicioModel extends Model
     {
 
-        protected $table      = 'TipoServicio';
+        protected $table      = 'tiposervicio';
         protected $primaryKey = 'id_tipoServicio';
 
         //id autoIncrement

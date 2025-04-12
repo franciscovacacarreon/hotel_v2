@@ -423,7 +423,7 @@ $fecha_actual = date("d/m/Y");
                 //utilizando ajax
                 //primero va a la url, y hace todo lo que se le indica
                 $.ajax({
-                    url: '<?php echo base_url(); ?>temporalReserva/insertar/' + nro_habitacion + "/" + cantidad + "/" + id_notaReserva + "/" + id_cliente + "/" + id_reserva,
+                    url: '<?php echo base_url(); ?>temporalreserva/insertar/' + nro_habitacion + "/" + cantidad + "/" + id_notaReserva + "/" + id_cliente + "/" + id_reserva,
 
                     //una vez haya hecho todo, captura todo en resultado
                     success: function(resultado) {
@@ -454,7 +454,7 @@ $fecha_actual = date("d/m/Y");
         function eliminarHabitacion(nro_habitacion, id_notaReserva) {
             //usando ajax
             $.ajax({
-                url: '<?php echo base_url(); ?>temporalReserva/eliminar/' + nro_habitacion + "/" + id_notaReserva,
+                url: '<?php echo base_url(); ?>temporalreserva/eliminar/' + nro_habitacion + "/" + id_notaReserva,
                 success: function(resultado) {
                     if (resultado == 0) {
                         //$(tagCodigo).val('');

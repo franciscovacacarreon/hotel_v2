@@ -12,8 +12,8 @@
       <?php if ($session->id_rol == 1) {?>
           <div class="my-3">
             <p>
-              <a href="<?php echo base_url() ?>tipoServicio/crear" class="btn btn-info">Agregar</a>
-              <a href="<?php echo base_url() ?>tipoServicio/eliminados" class="btn btn-warning">Eliminados</a>
+              <a href="<?php echo base_url() ?>tiposervicio/crear" class="btn btn-info">Agregar</a>
+              <a href="<?php echo base_url() ?>tiposervicio/eliminados" class="btn btn-warning">Eliminados</a>
             </p>
           </div>
       <?php }?>
@@ -62,13 +62,13 @@
               <?php if ($session->id_rol == 1) {?>
               <!-- boton para editar -->
               <td>
-                <a href="<?php echo base_url() ?>tipoServicio/editar/<?= $dato['id_tipoServicio'] ?>" class="btn btn-warning btn-sm">
+                <a href="<?php echo base_url() ?>tiposervicio/editar/<?= $dato['id_tipoServicio'] ?>" class="btn btn-warning btn-sm">
                   <i class="fa-sharp fa-light fa-pencil"></i> Editar
                 </a>
               </td>
               <!-- boton para eliminar -->
               <td>
-                <a data-href="<?php echo base_url() ?>tipoServicio/eliminar/<?= $dato['id_tipoServicio'] ?>" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-placement="top" title="Eliminar Registro">
+                <a data-href="<?php echo base_url() ?>tiposervicio/eliminar/<?= $dato['id_tipoServicio'] ?>" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#modal-confirma" data-placement="top" title="Eliminar Registro">
                   <i class="fa fa-trash"></i> Eliminar
                 </a>
               </td>

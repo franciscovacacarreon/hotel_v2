@@ -30,9 +30,9 @@
         public function mostrar() {
             $this->select('permiso.*, 
                            submodulo.nombre as nombre_submodulo, 
-                           tipoPermiso.nombre as nombre_tipoPermiso, 
+                           tipopermiso.nombre as nombre_tipoPermiso, 
                            modulo.id_modulo, modulo.nombre as nombre_modulo');
-            $this->join('tipoPermiso', 'tipoPermiso.id_tipoPermiso = permiso.id_tipoPermiso');
+            $this->join('tipopermiso', 'tipopermiso.id_tipoPermiso = permiso.id_tipoPermiso');
             $this->join('submodulo', 'submodulo.id_submodulo = permiso.id_submodulo');
             $this->join('modulo', 'submodulo.id_modulo = modulo.id_modulo');
             $this->orderBy('permiso.id_permiso', 'ASC');

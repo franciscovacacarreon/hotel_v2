@@ -47,7 +47,7 @@ class ReservaModel extends Model
 
 
     //métodos 
-    //mostrar notaServicio
+    //mostrar notaservicio
     public function mostrar()
     {
         return $this->where('estado', 1)->findAll();
@@ -140,12 +140,12 @@ class ReservaModel extends Model
                 categoria.nombre as nombre_categoria, 
                 categoria.descripcion, 
                 categoria.precio
-                FROM reserva, detalleReserva, cliente, habitacion, categoria, recepcionista
+                FROM reserva, detallereserva, cliente, habitacion, categoria, recepcionista
                 WHERE reserva.id_cliente = cliente.id_cliente
                 AND reserva.id_recepcionista = recepcionista.id_recepcionista
                 AND habitacion.id_categoria = categoria.id
-                AND detalleReserva.id_notaReserva = reserva.id_notaReserva
-                AND detalleReserva.nro_habitacion = habitacion.nro_habitacion
+                AND detallereserva.id_notaReserva = reserva.id_notaReserva
+                AND detallereserva.nro_habitacion = habitacion.nro_habitacion
                 AND reserva.fechaEntrada BETWEEN '$fecha_inicio' AND '$fecha_fin'";
 
         $query = $this->db->query($sql);
@@ -157,12 +157,12 @@ class ReservaModel extends Model
     public function reporteMontoHospedaje($fecha_inicio, $fecha_fin){
         $sql = "SELECT SUM(reserva.monto_total) as monto_reserva,
                 COUNT(reserva.id_notaReserva) as cantidad_reserva
-                FROM reserva, detalleReserva, cliente, habitacion, categoria, recepcionista
+                FROM reserva, detallereserva, cliente, habitacion, categoria, recepcionista
                 WHERE reserva.id_cliente = cliente.id_cliente
                 AND reserva.id_recepcionista = recepcionista.id_recepcionista
                 AND habitacion.id_categoria = categoria.id
-                AND detalleReserva.id_notaReserva = reserva.id_notaReserva
-                AND detalleReserva.nro_habitacion = habitacion.nro_habitacion
+                AND detallereserva.id_notaReserva = reserva.id_notaReserva
+                AND detallereserva.nro_habitacion = habitacion.nro_habitacion
                 AND reserva.fechaEntrada BETWEEN '$fecha_inicio' AND '$fecha_fin'";
 
         $query = $this->db->query($sql);

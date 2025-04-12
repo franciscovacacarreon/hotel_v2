@@ -35,9 +35,9 @@
                             <label for="">Categorias</label>
                             <select class="form-control" name="id_tipoServicio" id="id_tipoServicio" required>
                                 <option value="">Selecionar tipo de servicio</option>
-                                <?php foreach ($tipoServicios as $tipoServicio) { ?>
+                                <?php foreach ($tipoServicios as $tiposervicio) { ?>
 
-                                    <option value="<?php echo $tipoServicio['id_tipoServicio'] ?>"><?php echo $tipoServicio['nombre'] ?></option>
+                                    <option value="<?php echo $tiposervicio['id_tipoServicio'] ?>"><?php echo $tiposervicio['nombre'] ?></option>
 
                                 <?php } ?>
                             </select>

@@ -27,7 +27,7 @@
                         <p class="card-text">Nro. Habitacion: <?php // $data['nro_habitacion'] ?></p>
                         <p class="card-text">Cliente: <?php // $data['nombre_cliente'] ?></p>
                         <p class="card-text">ID hospedaje: <?php // $data['id_notaHospedaje'] ?></p>
-                        <a href="<?php //echo base_url() . 'notaHospedaje/finalizarHospedaje/' . $data['id_notaHospedaje']; ?>" class="btn btn-primary visually-hidden-focusable">
+                        <a href="<?php //echo base_url() . 'notahospedaje/finalizarHospedaje/' . $data['id_notaHospedaje']; ?>" class="btn btn-primary visually-hidden-focusable">
                             <i class="fa-solid fa-calendar"></i></i> Finalizar
                         </a>
                     </div>

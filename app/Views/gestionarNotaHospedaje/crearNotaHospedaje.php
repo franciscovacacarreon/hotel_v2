@@ -75,7 +75,7 @@ $fecha_actual = date("d/m/Y");
                 </input>
             </div>
 
-            <form method="POST" id="form-nota-hospedaje" name="form-nota-hospedaje" action="<?php echo base_url() ?>notaHospedaje/guarda" autocomplete="off">
+            <form method="POST" id="form-nota-hospedaje" name="form-nota-hospedaje" action="<?php echo base_url() ?>notahospedaje/guarda" autocomplete="off">
                 <div class="form-group">
                     <div class="row">
                         <div class="col-12 col-sm-4">
@@ -438,7 +438,7 @@ $fecha_actual = date("d/m/Y");
                 //utilizando ajax
                 //primero va a la url, y hace todo lo que se le indica
                 $.ajax({
-                    url: '<?php echo base_url(); ?>temporalHospedaje/insertar/' + nro_habitacion + "/" + cantidad + "/" + id_notaHospedaje + "/" + id_cliente + "/" + id_reserva,
+                    url: '<?php echo base_url(); ?>temporalhospedaje/insertar/' + nro_habitacion + "/" + cantidad + "/" + id_notaHospedaje + "/" + id_cliente + "/" + id_reserva,
 
                     //una vez haya hecho todo, captura todo en resultado
                     success: function(resultado) {
@@ -469,7 +469,7 @@ $fecha_actual = date("d/m/Y");
         function eliminarHabitacion(nro_habitacion, id_notaHospedaje) {
             //usando ajax
             $.ajax({
-                url: '<?php echo base_url(); ?>temporalHospedaje/eliminar/' + nro_habitacion + "/" + id_notaHospedaje,
+                url: '<?php echo base_url(); ?>temporalhospedaje/eliminar/' + nro_habitacion + "/" + id_notaHospedaje,
                 success: function(resultado) {
                     if (resultado == 0) {
                         //$(tagCodigo).val('');

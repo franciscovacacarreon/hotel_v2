@@ -17,7 +17,7 @@ class Permiso extends BaseController
     //tabla de la base de datos
     protected $permiso;
     protected $submodulo;
-    protected $tipoPermiso;
+    protected $tipopermiso;
     protected $detalleRol;
     //reglas para las validaciones
     protected $reglas;
@@ -27,7 +27,7 @@ class Permiso extends BaseController
     {
         $this->permiso = new PermisoModel();
         $this->submodulo = new SubmoduloModel();
-        $this->tipoPermiso = new TipoPermisoModel();
+        $this->tipopermiso = new TipoPermisoModel();
         $this->detalleRol = new DetalleRolPermisoModel();
         $this->session = Session();
 
@@ -79,7 +79,7 @@ class Permiso extends BaseController
         }
         $permisoConsulta = $this->permiso->mostrar();
         $submodulos = $this->submodulo->mostrar();
-        $tipoPermisos = $this->tipoPermiso->mostrar();
+        $tipoPermisos = $this->tipopermiso->mostrar();
         $data = ['titulo' => 
                  'Permisos', 
                  'permisos' => $permisoConsulta, 
@@ -146,7 +146,7 @@ class Permiso extends BaseController
     }
 
     /*public function getTipoPermisoJSON () {
-        $tipoPermisos = $this->tipoPermiso->mostrar();
+        $tipoPermisos = $this->tipopermiso->mostrar();
         $tipoPermisosJSON = json_encode($tipoPermisos);
         return $tipoPermisosJSON;
     }

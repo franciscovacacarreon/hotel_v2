@@ -6,7 +6,7 @@
                 <div class="panel">
                     <!-- embebido, para mostrar el pdf-->
                     <div class="row" style="margin-top: 30px;">
-                    <iframe class="col-12" style="height: 500px" src="<?php echo base_url().'notaHospedaje/generaNotaHospedajePdf/'.$id_notaHospedaje;?>">
+                    <iframe class="col-12" style="height: 500px" src="<?php echo base_url().'notahospedaje/generaNotaHospedajePdf/'.$id_notaHospedaje;?>">
                         
                     </iframe> 
                     </div>

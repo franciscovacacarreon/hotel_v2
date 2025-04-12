@@ -134,10 +134,10 @@
                         <div class="customScroll5">
                             <ul class="project-activity">
                                 
-                                <?php foreach ($tipoServicios as $tipoServicio) {?>
+                                <?php foreach ($tipoServicios as $tiposervicio) {?>
                                     <li class="activity-list">
                                         <div class="detail-info">
-                                            <p class="date"><?=$tipoServicio['nombre']?></p>
+                                            <p class="date"><?=$tiposervicio['nombre']?></p>
                                         </div>
                                     </li>
                                 <?php }?>

@@ -29,7 +29,7 @@ $routes->set404Override();
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$base = 'Hotel_v2/public';
+$base = '';
 $routes->get('/', 'Home::index');
 //rutas para categoria
 $routes->get($base.'/categoria', 'Categoria::getIndex');
@@ -98,17 +98,17 @@ $routes->get($base.'/administrador', 'Usuario::getAdministrador');
 
 //-------------------------------------TipoServicio----------------------------------------//
 //mostrar
-$routes->get($base.'/tipoServicio', 'TipoServicio::getIndex');
+$routes->get($base.'/tiposervicio', 'TipoServicio::getIndex');
 //crear
-$routes->get($base.'/tipoServicio/crear', 'TipoServicio::getCrear'); 
-$routes->post($base.'/tipoServicio/insertar', 'TipoServicio::postInsertar');
+$routes->get($base.'/tiposervicio/crear', 'TipoServicio::getCrear'); 
+$routes->post($base.'/tiposervicio/insertar', 'TipoServicio::postInsertar');
 //editar
-$routes->get($base.'/tipoServicio/editar/(:num)', 'TipoServicio::getEditar/$1');
-$routes->post($base.'/tipoServicio/actualizar', 'TipoServicio::postActualizar');
+$routes->get($base.'/tiposervicio/editar/(:num)', 'TipoServicio::getEditar/$1');
+$routes->post($base.'/tiposervicio/actualizar', 'TipoServicio::postActualizar');
 //eliminar
-$routes->get($base.'/tipoServicio/eliminados', 'TipoServicio::getEliminados');
-$routes->get($base.'/tipoServicio/eliminar/(:num)', 'TipoServicio::getEliminar/$1');
-$routes->get($base.'/tipoServicio/restaurar/(:num)', 'TipoServicio::getRestaurar/$1');
+$routes->get($base.'/tiposervicio/eliminados', 'TipoServicio::getEliminados');
+$routes->get($base.'/tiposervicio/eliminar/(:num)', 'TipoServicio::getEliminar/$1');
+$routes->get($base.'/tiposervicio/restaurar/(:num)', 'TipoServicio::getRestaurar/$1');
 
 //-------------------------------------Servicio----------------------------------------//
 $routes->get($base.'/servicio', 'Servicio::getIndex');
@@ -138,26 +138,26 @@ $routes->get($base.'/cliente/restaurar/(:num)', 'Cliente::getRestaurar/$1');
 
 //-------------------------------------Nota de servicio----------------------------------------//
 //mostrar
-$routes->get($base.'/notaServicio', 'notaServicio::getIndex');
+$routes->get($base.'/notaservicio', 'notaservicio::getIndex');
 //crear
-$routes->get($base.'/notaServicio/crear', 'NotaServicio::getCrear'); 
-$routes->post($base.'/notaServicio/guarda', 'NotaServicio::postGuarda');
+$routes->get($base.'/notaservicio/crear', 'NotaServicio::getCrear'); 
+$routes->post($base.'/notaservicio/guarda', 'NotaServicio::postGuarda');
 
 //servcio, mostrar por id
 $routes->get($base.'/servicio/buscarPorId/(:num)', 'Servicio::getBuscarPorId/$1');
 
 //TemporalServicio
-$routes->get($base.'/temporalServicio/insertar/(:num)/(:num)/(:alphanum)/(:num)/(:num)', 
+$routes->get($base.'/temporalservicio/insertar/(:num)/(:num)/(:alphanum)/(:num)/(:num)', 
                         'TemporalServicio::getInsertar/$1/$2/$3/$4/$5');
 
-//temporalServicio, eliminar
-$routes->get($base.'/temporalServicio/eliminar/(:num)/(:alphanum)', 'TemporalServicio::getEliminar/$1/$2');
+//temporalservicio, eliminar
+$routes->get($base.'/temporalservicio/eliminar/(:num)/(:alphanum)', 'TemporalServicio::getEliminar/$1/$2');
 
 //Rutas para el pdf
 //muestra el pdf
-$routes->get($base.'/notaServicio/muestraNotaServicioPdf/(:num)', 'NotaServicio::getMuestraNotaServicioPdf/$1');
+$routes->get($base.'/notaservicio/muestraNotaServicioPdf/(:num)', 'NotaServicio::getMuestraNotaServicioPdf/$1');
 //generar el pdf
-$routes->get($base.'/notaServicio/generaNotaServicioPdf/(:num)', 'NotaServicio::getGeneraNotaServicioPdf/$1');
+$routes->get($base.'/notaservicio/generaNotaServicioPdf/(:num)', 'NotaServicio::getGeneraNotaServicioPdf/$1');
 
 
 //-------------------------------------Configuracion----------------------------------------//
@@ -168,9 +168,9 @@ $routes->post($base.'/configuracion/actualizar', 'Configuracion::postActualizar'
 
 //-------------------------------------Hospedaje----------------------------------------//
 //Crear 
-$routes->get($base.'/notaHospedaje', 'NotaHospedaje::getIndex'); 
-$routes->get($base.'/notaHospedaje/crear', 'NotaHospedaje::getCrear');
-$routes->post($base.'/notaHospedaje/guarda', 'NotaHospedaje::postGuarda');
+$routes->get($base.'/notahospedaje', 'NotaHospedaje::getIndex'); 
+$routes->get($base.'/notahospedaje/crear', 'NotaHospedaje::getCrear');
+$routes->post($base.'/notahospedaje/guarda', 'NotaHospedaje::postGuarda');
 
 //habitacion, buscar por id
 $routes->get($base.'/habitacion/buscarPorId/(:num)', 'Habitacion::getBuscarPorId/$1'); 
@@ -179,18 +179,18 @@ $routes->get($base.'/habitacion/buscarPorId/(:num)', 'Habitacion::getBuscarPorId
 $routes->get($base.'/cliente/buscarPorId/(:num)', 'Cliente::getBuscarPorId/$1'); 
 
 //finalizar hospedaje
-$routes->get($base.'/notaHospedaje/finalizarHospedaje/(:num)', 'NotaHospedaje::getFinalizarHospedaje/$1'); 
+$routes->get($base.'/notahospedaje/finalizarHospedaje/(:num)', 'NotaHospedaje::getFinalizarHospedaje/$1'); 
 
 //temporal, insertar
-$routes->get($base.'/temporalHospedaje/insertar/(:num)/(:num)/(:alphanum)/(:num)/(:alphanum)', 
+$routes->get($base.'/temporalhospedaje/insertar/(:num)/(:num)/(:alphanum)/(:num)/(:alphanum)', 
                         'TemporalHospedaje::getInsertar/$1/$2/$3/$4/$5');
 //temporal, eliminar
-$routes->get($base.'/temporalHospedaje/eliminar/(:num)/(:alphanum)', 'TemporalHospedaje::getEliminar/$1/$2');
+$routes->get($base.'/temporalhospedaje/eliminar/(:num)/(:alphanum)', 'TemporalHospedaje::getEliminar/$1/$2');
 
 //rutas para el pdf
 //muestra el pdf
-$routes->get($base.'/notaHospedaje/muestraNotaHospedajePdf/(:num)', 'NotaHospedaje::getMuestraNotaHospedajePdf/$1');
-$routes->get($base.'/notaHospedaje/generaNotaHospedajePdf/(:num)', 'NotaHospedaje::getGeneraNotaHospedajePdf/$1');
+$routes->get($base.'/notahospedaje/muestraNotaHospedajePdf/(:num)', 'NotaHospedaje::getMuestraNotaHospedajePdf/$1');
+$routes->get($base.'/notahospedaje/generaNotaHospedajePdf/(:num)', 'NotaHospedaje::getGeneraNotaHospedajePdf/$1');
 
 //-------------------------------------Reportes----------------------------------------//
 $routes->get($base.'/reporte', 'Reporte::getIndex');
@@ -223,11 +223,11 @@ $routes->get($base.'/reserva/crear', 'Reserva::getCrear');
 $routes->post($base.'/reserva/guarda', 'Reserva::postGuarda');
 
 //temporal, insertar
-$routes->get($base.'/temporalReserva/insertar/(:num)/(:num)/(:alphanum)/(:num)/(:alphanum)', 
+$routes->get($base.'/temporalreserva/insertar/(:num)/(:num)/(:alphanum)/(:num)/(:alphanum)', 
                         'TemporalReserva::getInsertar/$1/$2/$3/$4/$5');
 
 //temporal, eliminar
-$routes->get($base.'/temporalReserva/eliminar/(:num)/(:alphanum)', 'TemporalReserva::getEliminar/$1/$2');
+$routes->get($base.'/temporalreserva/eliminar/(:num)/(:alphanum)', 'TemporalReserva::getEliminar/$1/$2');
 
 //-------------------------------------Recepcion----------------------------------------//
 $routes->get($base.'/recepcion', 'Recepcion::getIndex');

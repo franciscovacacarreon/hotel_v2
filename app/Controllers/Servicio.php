@@ -11,8 +11,8 @@ class Servicio extends BaseController
 {
     //tabla de la base de datos
     protected $servicio;
-    //usamos el modelo tipoServicio para obtener las tipoServicios
-    protected $tipoServicio;
+    //usamos el modelo tiposervicio para obtener las tipoServicios
+    protected $tiposervicio;
     protected $detalleRol;
     //reglas para las validaciones
     protected $reglas;
@@ -21,7 +21,7 @@ class Servicio extends BaseController
     public function __construct()
     {
         $this->servicio = new ServicioModel();
-        $this->tipoServicio = new TipoServicioModel();
+        $this->tiposervicio = new TipoServicioModel();
         $this->detalleRol = new DetalleRolPermisoModel();
         $this->session = Session();
 
@@ -109,7 +109,7 @@ class Servicio extends BaseController
             return $this->getSinPermiso();
         }
         //consulta para traer los tipoServicios disponibles
-        $tipoServicios = $this->tipoServicio->mostrar();
+        $tipoServicios = $this->tiposervicio->mostrar();
         $data = [
             'titulo' => 'Crear Servicio',
             'validation' => $this->validator,
@@ -156,7 +156,7 @@ class Servicio extends BaseController
             return $this->getSinPermiso();
         }
         $servicio = $this->servicio->mostrarId($id_servicio);
-        $tipoServicios = $this->tipoServicio->mostrar();
+        $tipoServicios = $this->tiposervicio->mostrar();
         $data = [
             'titulo' => 'Editar Servicio',
             'servicio' => $servicio,

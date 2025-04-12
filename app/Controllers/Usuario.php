@@ -31,7 +31,7 @@ class Usuario extends BaseController
     //para la vista administrador
     protected $habitacion;
     protected $servicio;
-    protected $tipoServicio;
+    protected $tiposervicio;
 
     public function __construct()
     {
@@ -42,7 +42,7 @@ class Usuario extends BaseController
         //para la vista administrador
         $this->habitacion = new HabitacionModel();
         $this->servicio = new ServicioModel();
-        $this->tipoServicio = new TipoServicioModel();
+        $this->tiposervicio = new TipoServicioModel();
         $this->acceso = new AccesoModel();
 
         helper(['form']); //para que no se pierdan los datos escritos en la vista
@@ -363,7 +363,7 @@ class Usuario extends BaseController
             'cantidadServicio' => $this->habitacion->cantidadServicioDia()['cantidad_servicio'],
             'cantidadCliente' => $this->habitacion->cantidadClienteDia()['cantidad_cliente'],
             'servicios' => $servicios,
-            'tipoServicios' => $this->tipoServicio->mostrar()
+            'tipoServicios' => $this->tiposervicio->mostrar()
             
         ];
 

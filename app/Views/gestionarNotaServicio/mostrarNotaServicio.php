@@ -17,16 +17,16 @@
           </tr>
         </thead>
         <tbody>
-          <?php foreach ($notaServicios as $notaServicio) { ?>
+          <?php foreach ($notaServicios as $notaservicio) { ?>
             <tr>
-              <td><?php echo $notaServicio['id_notaServicio'] ?></td>
-              <td><?php echo $notaServicio['monto_total'] ?></td>
-              <td><?php echo $notaServicio['id_cliente'] ?></td>
-              <td><?php echo $notaServicio['id_notaHospedaje'] ?></td>
-              <td><?php echo $notaServicio['fecha_ingreso'] ?></td>
+              <td><?php echo $notaservicio['id_notaServicio'] ?></td>
+              <td><?php echo $notaservicio['monto_total'] ?></td>
+              <td><?php echo $notaservicio['id_cliente'] ?></td>
+              <td><?php echo $notaservicio['id_notaHospedaje'] ?></td>
+              <td><?php echo $notaservicio['fecha_ingreso'] ?></td>
               <td>
                 <!-- botón para editar el registro -->
-                <a href="<?php echo base_url() . 'notaServicio/muestraNotaServicioPdf/' . $notaServicio['id_notaServicio']; ?>" class="btn btn-primary btn-sm">
+                <a href="<?php echo base_url() . 'notaservicio/muestraNotaServicioPdf/' . $notaservicio['id_notaServicio']; ?>" class="btn btn-primary btn-sm">
                 <i class="fa-sharp fa-light fa-file"></i> Detalle
                 </a>
               </td>

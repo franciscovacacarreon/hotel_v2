@@ -18,7 +18,7 @@ class Reserva extends BaseController
     protected $notaReserva;
     protected $cliente;
     protected $temporal_reserva;
-    protected $detalleReserva;
+    protected $detallereserva;
     protected $reglas; //  TERMINAR VALIDACIONES
     protected $configuracion;
     protected $habitacion;
@@ -30,7 +30,7 @@ class Reserva extends BaseController
         $this->notaReserva = new ReservaModel();
         $this->cliente = new ClienteModel();
         $this->temporal_reserva = new TemporalReservaModel();
-        $this->detalleReserva = new DetalleReservaModel();
+        $this->detallereserva = new DetalleReservaModel();
         $this->configuracion = new ConfiguracionModel();
         $this->habitacion = new HabitacionModel();
         $this->session = Session();
@@ -117,7 +117,7 @@ class Reserva extends BaseController
             $resultadoIdReservaConsulta = $this->temporal_reserva->porIdNotaReserva($id_notaReserva);
 
             foreach ($resultadoIdReservaConsulta as $row) {
-                $this->detalleReserva->crear(
+                $this->detallereserva->crear(
                     $resultadoIdReserva,
                     $row['nro_habitacion'],
                     $row['cantidad_dias'],

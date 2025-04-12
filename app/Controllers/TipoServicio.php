@@ -8,13 +8,13 @@ use App\Models\TipoServicioModel;
 class TipoServicio extends BaseController
 {
     //tabla de la base de datos
-    protected $tipoServicio;
+    protected $tiposervicio;
     protected $reglas;
     protected $session;
 
     public function __construct()
     {
-        $this->tipoServicio = new TipoServicioModel();
+        $this->tiposervicio = new TipoServicioModel();
         $this->session = Session();
 
         //validaciones
@@ -40,14 +40,14 @@ class TipoServicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $tipoServicio = $this->tipoServicio->mostrar();
-        $data = ['titulo' => 'Tipo Servicio', 'datos' => $tipoServicio];
+        $tiposervicio = $this->tiposervicio->mostrar();
+        $data = ['titulo' => 'Tipo Servicio', 'datos' => $tiposervicio];
         echo view('templates/header');
         echo view('gestionarTipoServicio/mostrarTipoServicio', $data);
         echo view('templates/footer');
     }
 
-    //metodo para redirigirnos a la vista para crear un tipoServicio
+    //metodo para redirigirnos a la vista para crear un tiposervicio
     public function getCrear()
     {
         if (!isset($this->session->id_usuario)) {
@@ -67,11 +67,11 @@ class TipoServicio extends BaseController
         }
         //si se envia el metodo post y la validaciones son correctas
         if ($this->request->getMethod() == "post" && $this->validate($this->reglas)) {
-            $this->tipoServicio->crear(
+            $this->tiposervicio->crear(
                 $this->request->getPost('nombre'),
                 $this->request->getPost('descripcion')
             );
-            return redirect()->to(base_url() . 'tipoServicio');
+            return redirect()->to(base_url() . 'tiposervicio');
         } else {
             $this->getCrear();
         }
@@ -83,10 +83,10 @@ class TipoServicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $tipoServicio = $this->tipoServicio->mostrarId($id);
+        $tiposervicio = $this->tiposervicio->mostrarId($id);
         $data = [
             'titulo' => 'Editar Tipo Servicio',
-            'datos' => $tipoServicio,
+            'datos' => $tiposervicio,
             'validation' => $this->validator
         ];
         echo view('templates/header');
@@ -102,13 +102,13 @@ class TipoServicio extends BaseController
         }
         //para la validación
         if ($this->request->getMethod() == "post"  &&  $this->validate($this->reglas)) {
-            $consulta = $this->tipoServicio->editar(
+            $consulta = $this->tiposervicio->editar(
                 $this->request->getPost('id'),
                 $this->request->getPost('nombre'),
                 $this->request->getPost('descripcion'),
             );
 
-            return redirect()->to(base_url() . 'tipoServicio');
+            return redirect()->to(base_url() . 'tiposervicio');
         } else {
         }
     }
@@ -119,10 +119,10 @@ class TipoServicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $tipoServicio = $this->tipoServicio->mostrarEliminados();
+        $tiposervicio = $this->tiposervicio->mostrarEliminados();
         $data = [
             'titulo' => 'Tipo Servicio Eliminadas',
-            'datos' => $tipoServicio,
+            'datos' => $tiposervicio,
         ];
         echo view('templates/header');
         echo view('gestionarTipoServicio/eliminarTipoServicio', $data);
@@ -135,16 +135,16 @@ class TipoServicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $resultado = $this->tipoServicio->eliminar($id);
+        $resultado = $this->tiposervicio->eliminar($id);
         if (!$resultado) {
             $error = 'El tipo de servicio tiene registros asociados';
-            $tipoServicio = $this->tipoServicio->mostrar();
-            $data = ['titulo' => 'Tipo Servicio', 'error' => $error, 'datos' => $tipoServicio];
+            $tiposervicio = $this->tiposervicio->mostrar();
+            $data = ['titulo' => 'Tipo Servicio', 'error' => $error, 'datos' => $tiposervicio];
             echo view('templates/header');
             echo view('gestionarTipoServicio/mostrarTipoServicio', $data);
             echo view('templates/footer');
         } else {
-            return redirect()->to(base_url() . 'tipoServicio');
+            return redirect()->to(base_url() . 'tiposervicio');
         }
     }
 
@@ -153,8 +153,8 @@ class TipoServicio extends BaseController
         if (!isset($this->session->id_usuario)) {
             return redirect()->to(base_url());
         }
-        $this->tipoServicio->restaurar($id);
-        return redirect()->to(base_url() . 'tipoServicio');
+        $this->tiposervicio->restaurar($id);
+        return redirect()->to(base_url() . 'tiposervicio');
 
     }
 }

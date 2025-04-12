@@ -36,18 +36,18 @@
                             <label for="">Categorias</label>
                             <select class="form-control" name="id_tipoServicio" id="id_tipoServicio" required>
                                 <option value="">Selecionar tipo de servicio</option>
-                                <?php foreach ($tipoServicios as $tipoServicio) { ?>
+                                <?php foreach ($tipoServicios as $tiposervicio) { ?>
 
-                                    <option value="<?php echo $tipoServicio['id_tipoServicio'] ?>"
+                                    <option value="<?php echo $tiposervicio['id_tipoServicio'] ?>"
                                     <?php
                                         //si la categoria es igual al id de la categoria de la habitacion se selecciona
-                                        if ($tipoServicio['id_tipoServicio']  ==
+                                        if ($tiposervicio['id_tipoServicio']  ==
                                             $servicio['id_tipoServicio']) {
 
                                             echo 'selected';
                                         }
                                     ?>
-                                    ><?php echo $tipoServicio['nombre'] ?></option>
+                                    ><?php echo $tiposervicio['nombre'] ?></option>
 
                                 <?php } ?>
                             </select>

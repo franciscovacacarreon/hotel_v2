@@ -40,9 +40,9 @@ class ServicioModel extends Model
     //mostrar servicio
     public function mostrar()
     {
-        $sql = "SELECT servicio.*, tipoServicio.nombre as nombre_tipoServicio
-                FROM servicio, tipoServicio
-                WHERE servicio.id_tipoServicio = tipoServicio.id_tipoServicio
+        $sql = "SELECT servicio.*, tiposervicio.nombre as nombre_tipoServicio
+                FROM servicio, tiposervicio
+                WHERE servicio.id_tipoServicio = tiposervicio.id_tipoServicio
                 AND servicio.estado = 1";
 
         $query = $this->db->query($sql);
@@ -104,9 +104,9 @@ class ServicioModel extends Model
     //mostrar las habitaciones inactivas
     public function mostrarEliminados()
     {
-        $sql = "SELECT servicio.*, tipoServicio.nombre as nombre_tipoServicio
-                FROM servicio, tipoServicio
-                WHERE servicio.id_tipoServicio = tipoServicio.id_tipoServicio
+        $sql = "SELECT servicio.*, tiposervicio.nombre as nombre_tipoServicio
+                FROM servicio, tiposervicio
+                WHERE servicio.id_tipoServicio = tiposervicio.id_tipoServicio
                 AND servicio.estado = 0";
 
         $query = $this->db->query($sql);

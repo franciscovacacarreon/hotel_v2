@@ -5,7 +5,7 @@
 
     class TipoPermisoModel extends Model 
     {
-        protected $table      = 'tipoPermiso';
+        protected $table      = 'tipopermiso';
         protected $primaryKey = 'id_tipoPermiso';
 
         protected $useAutoIncrement = true;
@@ -28,7 +28,7 @@
          //Métodos
 
         public function mostrar() {
-            $this->select('tipoPermiso.*, tipoPermiso.id_tipoPermiso as id');
+            $this->select('tipopermiso.*, tipopermiso.id_tipoPermiso as id');
             return $this->findAll();
         }
     }

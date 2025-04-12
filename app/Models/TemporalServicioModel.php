@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class TemporalServicioModel extends Model
 {
 
-    protected $table      = 'temporalServicio';
+    protected $table      = 'temporalservicio';
     protected $primaryKey = 'id_temporalServicio';
 
     //id autoIncrement

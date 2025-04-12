@@ -26,10 +26,10 @@ class Database extends Config
      */
     public array $default = [
         'DSN'      => '',
-        'hostname' => 'localhost:3307',
-        'username' => 'root',
-        'password' => '',
-        'database' => 'hotel_jaldin_bolivar',
+        'hostname' => 'localhost',
+        'username' => 'db_user',
+        'password' => 'inticode#D6904',
+        'database' => 'hotel',
         'DBDriver' => 'MySQLi',
         'DBPrefix' => '',
         'pConnect' => false,
@@ -41,7 +41,7 @@ class Database extends Config
         'compress' => false,
         'strictOn' => false,
         'failover' => [],
-        'port'     => 3307,
+        'port'     => 3306,
     ];
 
     /**

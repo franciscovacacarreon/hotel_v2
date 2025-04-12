@@ -16,10 +16,10 @@ use PDF;
 class Reporte extends BaseController
 {
     //tabla de la base de datos
-    protected $notaHospedaje;
+    protected $notahospedaje;
     protected $cliente;
     protected $temporal_hospedaje;
-    protected $detalleHospedaje;
+    protected $detallehospedaje;
     protected $reglas; //  TERMINAR VALIDACIONES
     protected $configuracion;
     protected $habitacion;
@@ -27,14 +27,14 @@ class Reporte extends BaseController
     protected $categoria;
     // protected $sw;
     protected $session;
-    //protected $notaHospedaje;
+    //protected $notahospedaje;
 
     public function __construct()
     {
-        $this->notaHospedaje = new NotaHospedajeModel();
+        $this->notahospedaje = new NotaHospedajeModel();
         $this->cliente = new ClienteModel();
         $this->temporal_hospedaje = new TemporalHospedajeModel();
-        $this->detalleHospedaje = new DetalleHospedajeModel();
+        $this->detallehospedaje = new DetalleHospedajeModel();
         $this->configuracion = new ConfiguracionModel();
         $this->habitacion = new HabitacionModel();
         $this->reporte = new ReporteModel();
